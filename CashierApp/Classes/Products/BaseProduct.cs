@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CashierApp.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,21 +9,20 @@ namespace CashierApp.Classes.Products
 {
     public class BaseProduct : IEquatable<BaseProduct>
     {
-        protected int ProductID { get; set; }
+        public IdProducts ProductID { get; set; }
         protected string ProductName { get; set; }
         protected bool IsUpsell { get; set; }
         protected decimal Price { get; set; }
 
-        public BaseProduct(int productID, string productName, bool isUpsell, decimal price) 
+        public BaseProduct(IdProducts productID, string productName, bool isUpsell, decimal price) 
         { 
             ProductID = productID;
             ProductName = productName;
             IsUpsell = isUpsell;
             Price = price;
         }
-        public BaseProduct(int productID, string productName, bool isUpsell)
+        public BaseProduct(string productName, bool isUpsell)
         {
-            ProductID = productID;
             ProductName = productName;
             IsUpsell = isUpsell;
         }
@@ -72,6 +72,10 @@ namespace CashierApp.Classes.Products
         public void AddExtra(BaseExtra obj)
         {
             this.Price += obj.Price;
+        }
+        public void AddToBill(Order obj)
+        {
+            obj.OrderValue += this.Price;
         }
     }
 }

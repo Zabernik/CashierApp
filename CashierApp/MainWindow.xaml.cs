@@ -1,4 +1,6 @@
-﻿using CashierApp.Classes.Products.Burgers;
+﻿using CashierApp.Classes;
+using CashierApp.Classes.Products;
+using CashierApp.Classes.Products.Burgers;
 using CashierApp.Classes.Products.Extras;
 using CashierApp.Enums;
 using System;
@@ -27,16 +29,43 @@ namespace CashierApp
         {
             InitializeComponent();
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
+        Order order = new Order(1);
+        private void ButtonCheesburger_Click(object sender, RoutedEventArgs e)
         {
-            Cheesburger chees1 = new Cheesburger(FormsFood.Solo);
-            Cheesburger chees2 = new Cheesburger(FormsFood.Solo);
-            Cheesburger chees3 = new Cheesburger(FormsFood.Set);
-
+            Cheesburger cheesburger = new Cheesburger(FormsFood.Solo);
+            cheesburger.AddToBill(order);
+            order.AddProduct(cheesburger);
+            CheckBill();
+        }
+        private void ButtonCheesburgerSet_Click(object sender, RoutedEventArgs e)
+        {
+            Cheesburger cheesburger = new Cheesburger(FormsFood.Set);
+            cheesburger.AddToBill(order);
+            order.AddProduct(cheesburger);
+            CheckBill();
+        }
+        private void ButtonExtraChesse_Click(object sender, RoutedEventArgs e)
+        {
+            Cheese cheese = new Cheese();
+            cheese.AddToBill(order);
+            order.AddExtra(cheese);
+            CheckBill();
+        }
+        private void ButtonExtraBacon_Click(object sender, RoutedEventArgs e)
+        {
             Bacon bacon = new Bacon();
+            bacon.AddToBill(order);
+            order.AddExtra(bacon);
+            CheckBill();
+        }
+        public void CheckBill()
+        {
+            OrderLabel.Content = String.Join("\n", order.Products.ToArray());
+        }
 
-            chees1.AddExtra(bacon);
+        private void VoidButton_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

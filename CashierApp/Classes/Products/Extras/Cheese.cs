@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CashierApp.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,7 @@ namespace CashierApp.Classes.Products.Extras
 {
     public class Cheese : BaseExtra
     {
-        public Cheese() : base("Ser", 1.00m, 2)
+        public Cheese() : base("Ser", 1.00m, IdProducts.Cheese)
         {
         }
     }

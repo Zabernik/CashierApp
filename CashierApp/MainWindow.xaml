@@ -7,8 +7,12 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button Content="Button" HorizontalAlignment="Left" Height="64" Margin="340,153,0,0" VerticalAlignment="Top" Width="154" Click="Button_Click"/>
-        <Label x:Name="OrderLabel" Content="" HorizontalAlignment="Left" Height="378" Margin="10,10,0,0" VerticalAlignment="Top" Width="115"/>
+        <Button x:Name="ButtonCheesburger" Content="Cheesburger" HorizontalAlignment="Left" Height="52" Margin="181,53,0,0" VerticalAlignment="Top" Width="130" Click="ButtonCheesburger_Click"/>
+        <Label x:Name="OrderLabel" Content="" HorizontalAlignment="Left" Height="378" Margin="10,10,0,0" VerticalAlignment="Top" Width="166"/>
+        <Button x:Name="ButtonExtraChesse" Content="Ser" HorizontalAlignment="Left" Height="33" Margin="181,105,0,0" VerticalAlignment="Top" Width="65" Click="ButtonExtraChesse_Click"/>
+        <Button x:Name="ButtonExtraBacon" Content="Bekon" HorizontalAlignment="Left" Height="33" Margin="246,105,0,0" VerticalAlignment="Top" Width="65" Click="ButtonExtraBacon_Click"/>
+        <Button x:Name="ButtonCheesburgerSet" Content="Cheesburger &#xD;&#xA;Zestaw" HorizontalAlignment="Left" Height="85" Margin="311,53,0,0" VerticalAlignment="Top" Width="130" Click="ButtonCheesburgerSet_Click" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Button x:Name="VoidButton" Content="Void" HorizontalAlignment="Left" Height="53" Margin="181,304,0,0" VerticalAlignment="Top" Width="130" Click="VoidButton_Click"/>
 
     </Grid>
 </Window>
