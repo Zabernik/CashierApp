@@ -60,12 +60,40 @@ namespace CashierApp
         }
         public void CheckBill()
         {
-            OrderLabel.Content = String.Join("\n", order.Products.ToArray());
+            ListBoxOrder.Items.Clear();
+            foreach (var product in order.Products)
+            {
+                ListBoxOrder.Items.Add(product);
+            }
+            if (ListBoxOrder.Items.Count == 0)
+            {
+                VoidButton.IsEnabled = false;
+            }
+            else
+            {
+                VoidButton.IsEnabled = true;
+            }
+            CheckValue();
+        }
+        public void CheckValue()
+        {
+            LabelValue.Content = order.OrderValue.ToString();
         }
 
         private void VoidButton_Click(object sender, RoutedEventArgs e)
         {
-
+            try 
+            {
+                int indexPriceProduct = ListBoxOrder.SelectedIndex;
+                string product = ListBoxOrder.SelectedItem.ToString();
+                MessageBox.Show(product);
+                order.DeleteProduct(product,indexPriceProduct);
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show("Nie zaznaczono pozycji do usunięcia");
+            }
+            CheckBill();
         }
     }
 }

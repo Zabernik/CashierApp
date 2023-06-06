@@ -9,10 +9,17 @@ namespace CashierApp.Enums
     public enum IdProducts
     {
         Cheesburger = 001,
+        ChickenBurger = 002,
 
-        CheesburgerSet = 101,
+        CheesburgerSet = 201,
+        ChickenBurgerSet = 202,
 
-        Bacon = 1001,
-        Cheese = 1002
+        ChickenBurgerEnlargedSet = 302,
+
+        Piccante = 401,
+        PiccanteSet = 411,
+
+        Bacon = 501,
+        Cheese = 502
     }
 }

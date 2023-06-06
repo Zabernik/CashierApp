@@ -12,7 +12,7 @@ namespace CashierApp.Classes.Products
         public IdProducts ProductID { get; set; }
         protected string ProductName { get; set; }
         protected bool IsUpsell { get; set; }
-        protected decimal Price { get; set; }
+        public decimal Price { get; set; }
 
         public BaseProduct(IdProducts productID, string productName, bool isUpsell, decimal price) 
         { 
@@ -77,5 +77,10 @@ namespace CashierApp.Classes.Products
         {
             obj.OrderValue += this.Price;
         }
+        public void RemoveFromBill(Order obj)
+        {
+            obj.OrderValue -= this.Price;
+        }
+
     }
 }
