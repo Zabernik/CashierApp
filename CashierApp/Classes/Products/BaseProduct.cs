@@ -68,19 +68,5 @@ namespace CashierApp.Classes.Products
                 return false;
             }
         }
-
-        public void AddExtra(BaseExtra obj)
-        {
-            this.Price += obj.Price;
-        }
-        public void AddToBill(Order obj)
-        {
-            obj.OrderValue += this.Price;
-        }
-        public void RemoveFromBill(Order obj)
-        {
-            obj.OrderValue -= this.Price;
-        }
-
     }
 }

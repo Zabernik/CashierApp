@@ -5,14 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CashierApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="600" Width="900">
     <Grid>
-        <Button x:Name="ButtonCheesburger" Content="Cheesburger" HorizontalAlignment="Left" Height="52" Margin="181,53,0,0" VerticalAlignment="Top" Width="130" Click="ButtonCheesburger_Click"/>
-        <Button x:Name="ButtonExtraChesse" Content="Ser" HorizontalAlignment="Left" Height="33" Margin="181,105,0,0" VerticalAlignment="Top" Width="65" Click="ButtonExtraChesse_Click"/>
-        <Button x:Name="ButtonExtraBacon" Content="Bekon" HorizontalAlignment="Left" Height="33" Margin="246,105,0,0" VerticalAlignment="Top" Width="65" Click="ButtonExtraBacon_Click"/>
-        <Button x:Name="ButtonCheesburgerSet" Content="Cheesburger &#xD;&#xA;Zestaw" HorizontalAlignment="Left" Height="85" Margin="311,53,0,0" VerticalAlignment="Top" Width="130" Click="ButtonCheesburgerSet_Click" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-        <Button x:Name="VoidButton" Content="Void" HorizontalAlignment="Left" Height="53" Margin="181,304,0,0" VerticalAlignment="Top" Width="130" Click="VoidButton_Click" IsEnabled="False"/>
-        <ListBox x:Name="ListBoxOrder" HorizontalAlignment="Left" Height="394" VerticalAlignment="Top" Width="168" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+        <Button x:Name="ButtonCheesburger" Content="Cheesburger" HorizontalAlignment="Left" Height="52" Margin="295,65,0,0" VerticalAlignment="Top" Width="130" Click="ButtonCheesburger_Click"/>
+        <Button x:Name="ButtonExtraChesse" Content="Ser" HorizontalAlignment="Left" Height="33" Margin="295,117,0,0" VerticalAlignment="Top" Width="65" Click="ButtonExtraChesse_Click"/>
+        <Button x:Name="ButtonExtraBacon" Content="Bekon" HorizontalAlignment="Left" Height="33" Margin="360,117,0,0" VerticalAlignment="Top" Width="65" Click="ButtonExtraBacon_Click"/>
+        <Button x:Name="ButtonCheesburgerSet" Content="Cheesburger &#xD;&#xA;Zestaw" HorizontalAlignment="Left" Height="85" Margin="425,65,0,0" VerticalAlignment="Top" Width="130" Click="ButtonCheesburgerSet_Click" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Button x:Name="VoidButton" Content="Void" HorizontalAlignment="Left" Height="53" Margin="295,316,0,0" VerticalAlignment="Top" Width="130" Click="VoidButton_Click"/>
+        <ListBox x:Name="ListBoxOrder" HorizontalAlignment="Left" Height="394" VerticalAlignment="Top" Width="138" d:ItemsSource="{d:SampleData ItemCount=5}"/>
         <Label x:Name="LabelValue" Content="" HorizontalAlignment="Left" Height="30" Margin="0,394,0,0" VerticalAlignment="Top" Width="168"/>
 
     </Grid>

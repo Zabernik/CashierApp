@@ -33,28 +33,24 @@ namespace CashierApp
         private void ButtonCheesburger_Click(object sender, RoutedEventArgs e)
         {
             Cheesburger cheesburger = new Cheesburger(FormsFood.Solo);
-            cheesburger.AddToBill(order);
             order.AddProduct(cheesburger);
             CheckBill();
         }
         private void ButtonCheesburgerSet_Click(object sender, RoutedEventArgs e)
         {
             Cheesburger cheesburger = new Cheesburger(FormsFood.Set);
-            cheesburger.AddToBill(order);
             order.AddProduct(cheesburger);
             CheckBill();
         }
         private void ButtonExtraChesse_Click(object sender, RoutedEventArgs e)
         {
             Cheese cheese = new Cheese();
-            cheese.AddToBill(order);
             order.AddExtra(cheese);
             CheckBill();
         }
         private void ButtonExtraBacon_Click(object sender, RoutedEventArgs e)
         {
             Bacon bacon = new Bacon();
-            bacon.AddToBill(order);
             order.AddExtra(bacon);
             CheckBill();
         }
@@ -65,14 +61,6 @@ namespace CashierApp
             {
                 ListBoxOrder.Items.Add(product);
             }
-            if (ListBoxOrder.Items.Count == 0)
-            {
-                VoidButton.IsEnabled = false;
-            }
-            else
-            {
-                VoidButton.IsEnabled = true;
-            }
             CheckValue();
         }
         public void CheckValue()
@@ -82,17 +70,8 @@ namespace CashierApp
 
         private void VoidButton_Click(object sender, RoutedEventArgs e)
         {
-            try 
-            {
-                int indexPriceProduct = ListBoxOrder.SelectedIndex;
-                string product = ListBoxOrder.SelectedItem.ToString();
-                MessageBox.Show(product);
-                order.DeleteProduct(product,indexPriceProduct);
-            }
-            catch (Exception x)
-            {
-                MessageBox.Show("Nie zaznaczono pozycji do usunięcia");
-            }
+            int index = ListBoxOrder.SelectedIndex;
+            order.DeleteProduct(index);
             CheckBill();
         }
     }

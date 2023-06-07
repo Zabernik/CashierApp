@@ -7,22 +7,18 @@ using System.Threading.Tasks;
 
 namespace CashierApp.Classes.Products
 {
-    public class BaseExtra
+    public class BaseExtra : BaseProduct
     {
         public IdProducts ExtraID { get; set; }
         protected string Name { get; set; }
         public decimal Price { get; set; }
         protected bool IsUpsell = true;
 
-        public BaseExtra(string name, decimal price, IdProducts extraID) 
+        public BaseExtra(string name, decimal price, IdProducts extraID) : base(extraID,name,true,price) 
         { 
             ExtraID = extraID;
             Name = name;
             Price = price;
-        }
-        public void AddToBill(Order obj)
-        {
-            obj.OrderValue += this.Price;
         }
     }
 }

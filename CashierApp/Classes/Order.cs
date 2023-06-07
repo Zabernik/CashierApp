@@ -13,25 +13,13 @@ namespace CashierApp.Classes
     public class Order
     {
         public int Id { get; set; }
-        public decimal OrderValue
-        {
-            get
-            {
-                return OrderValue;
-            }
-            set
-            {
-                foreach (var price in PriceProducts)
-                {
-                    OrderValue += price;
-                }
-            }
-        }
+        public decimal OrderValue { get; set; }
         public List<IdProducts> Products { get; set; }
         public List<decimal> PriceProducts { get; set; }
         public Order(int id)
         {
             Products = new List<IdProducts>();
+            PriceProducts = new List<decimal>();
             Id = id;
         }
 
@@ -43,35 +31,26 @@ namespace CashierApp.Classes
         {
             Products.Add(obj.ProductID);
             PriceProducts.Add(obj.Price);
+            OrderValue += obj.Price;
         }
         public void AddExtra(BaseExtra obj)
         {
-            bool CanBeExtra = false;
             foreach (var product in Products)
             {
-                CanBeExtra = ((int)product) < 1000;
+                bool CanBeExtra = ((int)product) < 400;
                 if (CanBeExtra)
                 {
-                    goto B;                   
+                    PriceProducts.Add(obj.Price);
+                    Products.Add(obj.ExtraID);
+                    break;
                 }
             }
-
-            B:
-            if (CanBeExtra is true)
-            {
-                PriceProducts.Add(obj.Price);
-                Products.Add(obj.ExtraID);
-            }
-            else
-            {
-                MessageBox.Show("Nie można dodawać dodatków bez kanapek");
-            }
         }
-        public void DeleteProduct(string product,int indexPriceProduct)
+        public void DeleteProduct(int index)
         {
-            var productID = (IdProducts)Enum.Parse(typeof(IdProducts), product);
-            Products.Remove(productID);
-            PriceProducts.RemoveAt(indexPriceProduct);
+            Products.RemoveAt(index);
+            PriceProducts.RemoveAt(index);
+            OrderValue = PriceProducts.Sum();
         }
     }
 }
