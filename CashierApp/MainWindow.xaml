@@ -5,16 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CashierApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="900">
-    <Grid>
-        <Button x:Name="VoidButton" Content="Void" HorizontalAlignment="Left" Height="65" Margin="376,519,0,0" VerticalAlignment="Top" Width="130" Click="VoidButton_Click"/>
-        <ListBox x:Name="ListBoxOrder" HorizontalAlignment="Left" Height="519" VerticalAlignment="Top" Width="138" d:ItemsSource="{d:SampleData ItemCount=5}"/>
-        <Label x:Name="LabelValue" Content="" HorizontalAlignment="Left" Height="30" Margin="0,524,0,0" VerticalAlignment="Top" Width="138"/>
-        <Frame x:Name="Main" NavigationUIVisibility="Hidden" HorizontalAlignment="Left" Height="440" Margin="138,79,0,0" VerticalAlignment="Top" Width="752"/>
-        <Button x:Name="ButtonSandwich" Content="Kanapki" HorizontalAlignment="Left" Height="74" Margin="206,0,0,0" VerticalAlignment="Top" Width="150" Click="ButtonSandwich_Click"/>
-        <Button x:Name="ButtonWraps" Content="Wrapy" HorizontalAlignment="Left" Height="74" Margin="356,0,0,0" VerticalAlignment="Top" Width="150" Click="ButtonWraps_Click"/>
-        <Button x:Name="ButtonSalads" Content="Sałatki" HorizontalAlignment="Left" Height="74" Margin="506,0,0,0" VerticalAlignment="Top" Width="150" Click="ButtonSalads_Click"/>
-        <Button x:Name="ButtonExtras" Content="Dodatki" HorizontalAlignment="Left" Height="74" Margin="656,0,0,0" VerticalAlignment="Top" Width="150" Click="ButtonExtras_Click"/>
+        Title="MainWindow" WindowState="Maximized" WindowStyle="None">
+    <Grid Height="575" Width="1048">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="74*"/>
+            <RowDefinition Height="501*"/>
+        </Grid.RowDefinitions>
+        <Button x:Name="VoidButton" Content="Void" HorizontalAlignment="Left" Height="46" Margin="250,445,0,0" VerticalAlignment="Top" Width="126" Click="VoidButton_Click" Grid.Row="1"/>
+        <ListBox x:Name="ListBoxOrder" HorizontalAlignment="Left" Height="528" VerticalAlignment="Top" Width="138" d:ItemsSource="{d:SampleData ItemCount=5}" Grid.RowSpan="2" Background="#FFC3C3C3"/>
+        <Label x:Name="LabelValue" Content="20 PLN" HorizontalAlignment="Left" Height="37" Margin="0,454,0,0" VerticalAlignment="Top" Width="250" FontSize="20" FontWeight="Bold" Grid.Row="1" Background="#FFC3C3C3"/>
+        <Frame x:Name="Main" NavigationUIVisibility="Hidden" HorizontalAlignment="Left" Height="445" Margin="252,74,0,0" VerticalAlignment="Top" Width="684" Grid.RowSpan="2"/>
+        <Button x:Name="ButtonSandwich" Content="Kanapki" HorizontalAlignment="Left" Height="74" Margin="247,0,0,0" VerticalAlignment="Center" Width="150" Click="ButtonSandwich_Click"/>
+        <Button x:Name="ButtonWraps" Content="Wrapy" HorizontalAlignment="Left" Height="74" Margin="397,0,0,0" VerticalAlignment="Center" Width="150" Click="ButtonWraps_Click"/>
+        <Button x:Name="ButtonSalads" Content="Sałatki" HorizontalAlignment="Left" Height="74" Margin="547,0,0,0" VerticalAlignment="Center" Width="150" Click="ButtonSalads_Click"/>
+        <Button x:Name="ButtonExtras" Content="Dodatki" HorizontalAlignment="Left" Height="37" Margin="697,0,0,0" VerticalAlignment="Top" Width="150" Click="ButtonExtras_Click"/>
+        <ListBox x:Name="ListBoxValue" HorizontalAlignment="Left" Height="528" Margin="138,0,0,0" VerticalAlignment="Top" Width="112" d:ItemsSource="{d:SampleData ItemCount=5}" Grid.RowSpan="2" Background="#FFC3C3C3"/>
+        <Button x:Name="ButtonDrinks" Content="Napoje" HorizontalAlignment="Left" Height="37" Margin="697,37,0,0" VerticalAlignment="Top" Width="150"/>
+        <Button x:Name="ButtonHotDrinks" Content="Ciepłe Napoje" HorizontalAlignment="Left" Height="37" Margin="847,0,0,0" VerticalAlignment="Top" Width="150" />
+        <Button x:Name="ButtonDeserts" Content="Desery" HorizontalAlignment="Left" Height="37" Margin="847,37,0,0" VerticalAlignment="Top" Width="150"/>
 
     </Grid>
 </Window>

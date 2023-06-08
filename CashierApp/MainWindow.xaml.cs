@@ -38,15 +38,30 @@ namespace CashierApp
             ListBoxOrder.Items.Clear();
             foreach (var product in Order.Products)
             {
-                ListBoxOrder.Items.Add(product);
+                if ((int)product > 500)
+                {
+                    ListBoxOrder.Items.Add(new ListBoxItem { Content = $"- - - -> {product}", Foreground = Brushes.Green });
+                    //new SolidColorBrush(Colors.Aqua);
+                }
+                else
+                {
+                    ListBoxOrder.Items.Add($"{product}");
+                }
             }
-            LabelValue.Content = $"{Order.OrderValue.ToString()} PLN";
+            ListBoxValue.Items.Clear();
+            foreach (var productPrice in Order.PriceProducts)
+            {
+                ListBoxValue.Items.Add($"{productPrice}");
+            }
+            LabelValue.Content = $"{Order.OrderValue} PLN";
         }
-
+        public int SelectIndex()
+        {
+            return ListBoxOrder.SelectedIndex;
+        }
         private void VoidButton_Click(object sender, RoutedEventArgs e)
         {
-            int index = ListBoxOrder.SelectedIndex;
-            Order.DeleteProduct(index);
+            Order.DeleteProduct(SelectIndex());
             CheckBill();
         }
 

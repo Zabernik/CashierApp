@@ -29,15 +29,19 @@ namespace CashierApp.Pages
 
         private void ButtonExtraChesse_Click(object sender, RoutedEventArgs e)
         {
+            int index = ((MainWindow)Window.GetWindow(this)).SelectIndex();
+
             Cheese cheese = new Cheese();
-            Order.AddExtra(cheese);
+            Order.AddExtra(cheese,index);
             ((MainWindow)Window.GetWindow(this)).CheckBill();
         }
 
         private void ButtonExtraBacon_Click(object sender, RoutedEventArgs e)
         {
+            int index = ((MainWindow)Window.GetWindow(this)).SelectIndex();
+
             Bacon bacon = new Bacon();
-            Order.AddExtra(bacon);
+            Order.AddExtra(bacon,index);
             ((MainWindow)Window.GetWindow(this)).CheckBill();
         }
     }

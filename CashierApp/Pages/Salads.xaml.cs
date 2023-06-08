@@ -27,17 +27,11 @@ namespace CashierApp.Pages
         {
             InitializeComponent();
         }
-
-        private void ButtonCheesburger_Click(object sender, RoutedEventArgs e)
+        private void ButtonPiccante_Click(object sender, RoutedEventArgs e)
         {
             Piccante piccante = new Piccante(Enums.FormsFood.Solo);
             Order.AddProduct(piccante);
             ((MainWindow)Window.GetWindow(this)).CheckBill();
-        }
-
-        private void ButtonPiccante_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

@@ -33,30 +33,39 @@ namespace CashierApp.Classes
             PriceProducts.Add(obj.Price);
             OrderValue += obj.Price;
         }
-        public static void AddExtra(BaseExtra obj)
+        public static void AddExtra(BaseExtra obj, int index)
         {
-            bool CanBeExtra = false;
-            foreach (var product in Products)
+            try
             {
-                CanBeExtra = ((int)product) < 400;
-                if (CanBeExtra)
+                bool CanBeExtra = (int)Products[index] < 400;
+                if (CanBeExtra is true)
                 {
-                    PriceProducts.Add(obj.Price);
-                    Products.Add(obj.ExtraID);
-                    break;
+                    PriceProducts.Insert(index + 1, obj.Price);
+                    Products.Insert(index + 1, obj.ExtraID);
+                    OrderValue = PriceProducts.Sum();
+                }
+                else
+                {
+                    MessageBox.Show("Nie można dodać dodatku");
                 }
             }
-            if (CanBeExtra is false)
-            {
-                MessageBox.Show("Nie można dodać dodatku");
+            catch (Exception) 
+            { 
+                MessageBox.Show("Nie można dodać dodatku"); 
             }
-
         }
         public static void DeleteProduct(int index)
         {
-            Products.RemoveAt(index);
-            PriceProducts.RemoveAt(index);
-            OrderValue = PriceProducts.Sum();
+            try
+            {
+                Products.RemoveAt(index);
+                PriceProducts.RemoveAt(index);
+                OrderValue = PriceProducts.Sum();
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                MessageBox.Show("Najpierw zaznacz produkt do usunięcia");
+            }        
         }
     }
 }
