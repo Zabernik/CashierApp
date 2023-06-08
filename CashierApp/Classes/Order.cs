@@ -13,9 +13,9 @@ namespace CashierApp.Classes
     public class Order
     {
         public int Id { get; set; }
-        public decimal OrderValue { get; set; }
-        public List<IdProducts> Products { get; set; }
-        public List<decimal> PriceProducts { get; set; }
+        public static decimal OrderValue { get; set; }
+        public static List<IdProducts> Products { get; set; }
+        public static List<decimal> PriceProducts { get; set; }
         public Order(int id)
         {
             Products = new List<IdProducts>();
@@ -27,17 +27,18 @@ namespace CashierApp.Classes
         {
             return $"{OrderValue} PLN";
         }
-        public void AddProduct(BaseProduct obj)
+        public static void AddProduct(BaseProduct obj)
         {
             Products.Add(obj.ProductID);
             PriceProducts.Add(obj.Price);
             OrderValue += obj.Price;
         }
-        public void AddExtra(BaseExtra obj)
+        public static void AddExtra(BaseExtra obj)
         {
+            bool CanBeExtra = false;
             foreach (var product in Products)
             {
-                bool CanBeExtra = ((int)product) < 400;
+                CanBeExtra = ((int)product) < 400;
                 if (CanBeExtra)
                 {
                     PriceProducts.Add(obj.Price);
@@ -45,8 +46,13 @@ namespace CashierApp.Classes
                     break;
                 }
             }
+            if (CanBeExtra is false)
+            {
+                MessageBox.Show("Nie można dodać dodatku");
+            }
+
         }
-        public void DeleteProduct(int index)
+        public static void DeleteProduct(int index)
         {
             Products.RemoveAt(index);
             PriceProducts.RemoveAt(index);

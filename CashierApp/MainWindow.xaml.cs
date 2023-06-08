@@ -3,9 +3,11 @@ using CashierApp.Classes.Products;
 using CashierApp.Classes.Products.Burgers;
 using CashierApp.Classes.Products.Extras;
 using CashierApp.Enums;
+using CashierApp.Pages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -28,51 +30,44 @@ namespace CashierApp
         public MainWindow()
         {
             InitializeComponent();
+            CheckBill();
         }
         Order order = new Order(1);
-        private void ButtonCheesburger_Click(object sender, RoutedEventArgs e)
-        {
-            Cheesburger cheesburger = new Cheesburger(FormsFood.Solo);
-            order.AddProduct(cheesburger);
-            CheckBill();
-        }
-        private void ButtonCheesburgerSet_Click(object sender, RoutedEventArgs e)
-        {
-            Cheesburger cheesburger = new Cheesburger(FormsFood.Set);
-            order.AddProduct(cheesburger);
-            CheckBill();
-        }
-        private void ButtonExtraChesse_Click(object sender, RoutedEventArgs e)
-        {
-            Cheese cheese = new Cheese();
-            order.AddExtra(cheese);
-            CheckBill();
-        }
-        private void ButtonExtraBacon_Click(object sender, RoutedEventArgs e)
-        {
-            Bacon bacon = new Bacon();
-            order.AddExtra(bacon);
-            CheckBill();
-        }
         public void CheckBill()
         {
             ListBoxOrder.Items.Clear();
-            foreach (var product in order.Products)
+            foreach (var product in Order.Products)
             {
                 ListBoxOrder.Items.Add(product);
             }
-            CheckValue();
-        }
-        public void CheckValue()
-        {
-            LabelValue.Content = order.OrderValue.ToString();
+            LabelValue.Content = $"{Order.OrderValue.ToString()} PLN";
         }
 
         private void VoidButton_Click(object sender, RoutedEventArgs e)
         {
             int index = ListBoxOrder.SelectedIndex;
-            order.DeleteProduct(index);
+            Order.DeleteProduct(index);
             CheckBill();
+        }
+
+        private void ButtonSandwich_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new Sandwiches();
+        }
+
+        private void ButtonWraps_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new Wraps();
+        }
+
+        private void ButtonSalads_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new Salads();
+        }
+
+        private void ButtonExtras_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new Extras();
         }
     }
 }

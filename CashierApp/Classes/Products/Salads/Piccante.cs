@@ -19,12 +19,12 @@ namespace CashierApp.Classes.Products.Salads
             if (form == FormsFood.Set)
             {
                 base.Price = 19.99m;
-                base.ProductID = IdProducts.ChickenBurgerSet;
+                base.ProductID = IdProducts.PiccanteSet;
             }
             else
             {
                 base.Price = 12m;
-                base.ProductID = IdProducts.ChickenBurger;
+                base.ProductID = IdProducts.Piccante;
             }
         }
 

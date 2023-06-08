@@ -1,0 +1,16 @@
+﻿<Page x:Class="CashierApp.Pages.Sandwiches"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CashierApp.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Sandwiches">
+
+    <Grid>
+        <Button x:Name="ButtonCheesburger" Content="Cheesburger" HorizontalAlignment="Left" Height="85" Margin="30,29,0,0" VerticalAlignment="Top" Width="130" Click="ButtonCheesburger_Click"/>
+        <Button x:Name="ButtonCheesburgerSet" Content="Cheesburger &#xA;Zestaw" HorizontalAlignment="Left" Height="85" Margin="160,29,0,0" VerticalAlignment="Top" Width="130" Click="ButtonCheesburgerSet_Click" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+
+    </Grid>
+</Page>
