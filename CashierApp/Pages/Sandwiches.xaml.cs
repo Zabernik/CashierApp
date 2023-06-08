@@ -30,12 +30,15 @@ namespace CashierApp.Pages
         private void ButtonCheesburger_Click(object sender, RoutedEventArgs e)
         {
             Cheesburger cheesburger = new Cheesburger(FormsFood.Solo);
+            cheesburger.CheckProductPrice();
             Order.AddProduct(cheesburger);
             ((MainWindow)Window.GetWindow(this)).CheckBill();
+
         }
         private void ButtonCheesburgerSet_Click(object sender, RoutedEventArgs e)
         {
             Cheesburger cheesburger = new Cheesburger(FormsFood.Set);
+            cheesburger.CheckProductPrice();
             Order.AddProduct(cheesburger);
             ((MainWindow)Window.GetWindow(this)).CheckBill();
         }

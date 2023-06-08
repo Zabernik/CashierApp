@@ -29,12 +29,6 @@ namespace CashierApp.Classes.Products.Burgers
                 base.ProductID = IdProducts.ChickenBurger;
             }
         }
-
-        public void CheckPrice()
-        {
-            MessageBox.Show(base.Price.ToString());
-        }
-
         public void CheckIngredients()
         {
             MessageBox.Show("Bułka z ziarnami, majonez, sałata, mięso z kurczaka");

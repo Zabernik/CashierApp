@@ -29,29 +29,35 @@ namespace CashierApp.Classes
         }
         public static void AddProduct(BaseProduct obj)
         {
-            Products.Add(obj.ProductID);
-            PriceProducts.Add(obj.Price);
-            OrderValue += obj.Price;
+            if (MainWindow.CheckPrice is false)
+            {
+                Products.Add(obj.ProductID);
+                PriceProducts.Add(obj.Price);
+                OrderValue += obj.Price;
+            }
         }
         public static void AddExtra(BaseExtra obj, int index)
         {
-            try
+            if (MainWindow.CheckPrice is false)
             {
-                bool CanBeExtra = (int)Products[index] < 400;
-                if (CanBeExtra is true)
+                try
                 {
-                    PriceProducts.Insert(index + 1, obj.Price);
-                    Products.Insert(index + 1, obj.ExtraID);
-                    OrderValue = PriceProducts.Sum();
+                    bool CanBeExtra = (int)Products[index] < 400;
+                    if (CanBeExtra is true)
+                    {
+                        PriceProducts.Insert(index + 1, obj.Price);
+                        Products.Insert(index + 1, obj.ExtraID);
+                        OrderValue = PriceProducts.Sum();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Nie można dodać dodatku");
+                    }
                 }
-                else
+                catch (Exception)
                 {
                     MessageBox.Show("Nie można dodać dodatku");
                 }
-            }
-            catch (Exception) 
-            { 
-                MessageBox.Show("Nie można dodać dodatku"); 
             }
         }
         public static void DeleteProduct(int index)

@@ -28,12 +28,6 @@ namespace CashierApp.Classes.Products.Burgers
                 base.ProductID = IdProducts.Cheesburger;
             }
         }
-
-        public void CheckPrice()
-        {
-            MessageBox.Show(base.Price.ToString());
-        }
-
         public void CheckIngredients()
         {
             MessageBox.Show("Bułka bez ziaren, musztarda, ketchup, 2szt pikli, ser, mięso wołowe");

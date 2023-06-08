@@ -8,7 +8,6 @@ namespace CashierApp.Interfaces
 {
     public interface IDescription
     {
-        void CheckPrice();
         void CheckIngredients();
     }
 }

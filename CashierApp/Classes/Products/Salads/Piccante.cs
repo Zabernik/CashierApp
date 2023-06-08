@@ -1,4 +1,5 @@
 ﻿using CashierApp.Enums;
+using CashierApp.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ using System.Windows;
 
 namespace CashierApp.Classes.Products.Salads
 {
-    public class Piccante : BaseProduct
+    public class Piccante : BaseProduct, IDescription
     {
         public Piccante(FormsFood form) : base("Sałatka Piccante",false)
         {
@@ -27,17 +28,9 @@ namespace CashierApp.Classes.Products.Salads
                 base.ProductID = IdProducts.Piccante;
             }
         }
-
-        public void CheckPrice()
-        {
-            MessageBox.Show(base.Price.ToString());
-        }
-
         public void CheckIngredients()
         {
             MessageBox.Show("Pierś z kurczaka, sałata lodowa, pomidor, ogórek, pestki dyni, ser żółty");
         }
-
-
     }
 }

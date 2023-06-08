@@ -32,6 +32,7 @@ namespace CashierApp.Pages
             int index = ((MainWindow)Window.GetWindow(this)).SelectIndex();
 
             Cheese cheese = new Cheese();
+            cheese.CheckProductPrice();
             Order.AddExtra(cheese,index);
             ((MainWindow)Window.GetWindow(this)).CheckBill();
         }
@@ -41,6 +42,7 @@ namespace CashierApp.Pages
             int index = ((MainWindow)Window.GetWindow(this)).SelectIndex();
 
             Bacon bacon = new Bacon();
+            bacon.CheckProductPrice();
             Order.AddExtra(bacon,index);
             ((MainWindow)Window.GetWindow(this)).CheckBill();
         }

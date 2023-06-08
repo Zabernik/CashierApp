@@ -33,6 +33,7 @@ namespace CashierApp
             CheckBill();
         }
         Order order = new Order(1);
+        public static bool CheckPrice { get; set; } = false;
         public void CheckBill()
         {
             ListBoxOrder.Items.Clear();
@@ -83,6 +84,16 @@ namespace CashierApp
         private void ButtonExtras_Click(object sender, RoutedEventArgs e)
         {
             Main.Content = new Extras();
+        }
+
+        private void ButtonCheckPrice_Checked(object sender, RoutedEventArgs e)
+        {
+            CheckPrice = true;
+        }
+
+        private void ButtonCheckPrice_Unchecked(object sender, RoutedEventArgs e)
+        {
+            CheckPrice = false;
         }
     }
 }

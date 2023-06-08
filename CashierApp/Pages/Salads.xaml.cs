@@ -29,7 +29,8 @@ namespace CashierApp.Pages
         }
         private void ButtonPiccante_Click(object sender, RoutedEventArgs e)
         {
-            Piccante piccante = new Piccante(Enums.FormsFood.Solo);
+            Piccante piccante = new Piccante(FormsFood.Solo);
+            piccante.CheckProductPrice();
             Order.AddProduct(piccante);
             ((MainWindow)Window.GetWindow(this)).CheckBill();
         }

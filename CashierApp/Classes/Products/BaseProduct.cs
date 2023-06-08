@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace CashierApp.Classes.Products
 {
@@ -66,6 +67,13 @@ namespace CashierApp.Classes.Products
             else
             {
                 return false;
+            }
+        }
+        public void CheckProductPrice()
+        {
+            if (MainWindow.CheckPrice is true)
+            {
+                MessageBox.Show($"{this.ProductName} kosztuje {this.Price} PLN");
             }
         }
     }

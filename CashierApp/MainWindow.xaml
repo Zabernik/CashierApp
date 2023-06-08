@@ -12,6 +12,7 @@
             <RowDefinition Height="501*"/>
         </Grid.RowDefinitions>
         <Button x:Name="VoidButton" Content="Void" HorizontalAlignment="Left" Height="46" Margin="250,445,0,0" VerticalAlignment="Top" Width="126" Click="VoidButton_Click" Grid.Row="1"/>
+        <ToggleButton x:Name="ButtonCheckPrice" Content="Sprawdź Cene" HorizontalAlignment="Left" Height="46" Margin="376,445,0,0" VerticalAlignment="Top" Width="126" Grid.Row="1" Checked="ButtonCheckPrice_Checked" Unchecked="ButtonCheckPrice_Unchecked"/>
         <ListBox x:Name="ListBoxOrder" HorizontalAlignment="Left" Height="528" VerticalAlignment="Top" Width="138" d:ItemsSource="{d:SampleData ItemCount=5}" Grid.RowSpan="2" Background="#FFC3C3C3"/>
         <Label x:Name="LabelValue" Content="20 PLN" HorizontalAlignment="Left" Height="37" Margin="0,454,0,0" VerticalAlignment="Top" Width="250" FontSize="20" FontWeight="Bold" Grid.Row="1" Background="#FFC3C3C3"/>
         <Frame x:Name="Main" NavigationUIVisibility="Hidden" HorizontalAlignment="Left" Height="445" Margin="252,74,0,0" VerticalAlignment="Top" Width="684" Grid.RowSpan="2"/>
