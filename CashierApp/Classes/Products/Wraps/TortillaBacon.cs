@@ -7,30 +7,31 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace CashierApp.Classes.Products.Salads
+namespace CashierApp.Classes.Products.Wraps
 {
-    public class Piccante : BaseProduct, IDescription
+    public class TortillaBacon : BaseProduct, IDescription
     {
-        public Piccante(FormsFood form) : base("Sałatka Piccante",false)
+        public TortillaBacon(FormsFood form) : base("TortillaWithBacon", false)
         {
             if (form == FormsFood.EnlargedSet)
             {
-                throw new ArgumentException("An Enlarged Set is not provided");
+                base.Price = 24.99m;
+                base.ProductID = IdProducts.TortillaBaconEnlargedSet;
             }
             if (form == FormsFood.Set)
             {
                 base.Price = 19.99m;
-                base.ProductID = IdProducts.PiccanteSet;
+                base.ProductID = IdProducts.TortillaBaconSet;
             }
-            else
+            if (form == FormsFood.Solo)
             {
                 base.Price = 12m;
-                base.ProductID = IdProducts.Piccante;
+                base.ProductID = IdProducts.TortillaBacon;
             }
         }
         public override string CheckIngredients()
         {
-            return "Pierś z kurczaka, sałata lodowa, pomidor, ogórek, pestki dyni, ser żółty";
+            return "Tortilla 11', majonez, sałata, pomidor, bekon, kurczak";
         }
     }
 }

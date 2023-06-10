@@ -33,6 +33,7 @@ namespace CashierApp.Pages
 
             Cheese cheese = new Cheese();
             cheese.CheckProductPrice();
+            cheese.CheckProductIngredients();
             Order.AddExtra(cheese,index);
             ((MainWindow)Window.GetWindow(this)).CheckBill();
         }
@@ -43,6 +44,7 @@ namespace CashierApp.Pages
 
             Bacon bacon = new Bacon();
             bacon.CheckProductPrice();
+            bacon.CheckProductIngredients();
             Order.AddExtra(bacon,index);
             ((MainWindow)Window.GetWindow(this)).CheckBill();
         }

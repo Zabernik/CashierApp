@@ -24,6 +24,6 @@
         <Button x:Name="ButtonDrinks" Content="Napoje" HorizontalAlignment="Left" Height="37" Margin="697,37,0,0" VerticalAlignment="Top" Width="150"/>
         <Button x:Name="ButtonHotDrinks" Content="Ciepłe Napoje" HorizontalAlignment="Left" Height="37" Margin="847,0,0,0" VerticalAlignment="Top" Width="150" />
         <Button x:Name="ButtonDeserts" Content="Desery" HorizontalAlignment="Left" Height="37" Margin="847,37,0,0" VerticalAlignment="Top" Width="150"/>
-
+        <ToggleButton x:Name="ButtonCheckIngredients" Content="Sprawdź Skład" HorizontalAlignment="Left" Height="46" Margin="502,445,0,0" Grid.Row="1" VerticalAlignment="Top" Width="126" RenderTransformOrigin="-0.005,0.476" Checked="ButtonCheckIngredients_Checked" Unchecked="ButtonCheckIngredients_Unchecked"/>
     </Grid>
 </Window>

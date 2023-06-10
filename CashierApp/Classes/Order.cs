@@ -29,7 +29,7 @@ namespace CashierApp.Classes
         }
         public static void AddProduct(BaseProduct obj)
         {
-            if (MainWindow.CheckPrice is false)
+            if (MainWindow.CheckPrice is false && MainWindow.CheckIngredients is false)
             {
                 Products.Add(obj.ProductID);
                 PriceProducts.Add(obj.Price);
@@ -38,7 +38,7 @@ namespace CashierApp.Classes
         }
         public static void AddExtra(BaseExtra obj, int index)
         {
-            if (MainWindow.CheckPrice is false)
+            if (MainWindow.CheckPrice is false && MainWindow.CheckIngredients is false)
             {
                 try
                 {

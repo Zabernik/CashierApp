@@ -1,4 +1,6 @@
 ﻿using System;
+using CashierApp;
+using CashierApp.Classes.Products.Wraps;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +14,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using CashierApp.Classes;
+using CashierApp.Enums;
 
 namespace CashierApp.Pages
 {
@@ -23,6 +27,33 @@ namespace CashierApp.Pages
         public Wraps()
         {
             InitializeComponent();
+        }
+        private void ButtonTortillaBacon_Click(object sender, RoutedEventArgs e)
+        {
+            TortillaBacon tortillaBacon = new TortillaBacon(FormsFood.Solo);
+            tortillaBacon.CheckProductPrice();
+            tortillaBacon.CheckProductIngredients();
+            Order.AddProduct(tortillaBacon);
+            ((MainWindow)Window.GetWindow(this)).CheckBill();
+
+        }
+
+        private void ButtonTortillaBaconSet_Click(object sender, RoutedEventArgs e)
+        {
+            TortillaBacon tortillaBacon = new TortillaBacon(FormsFood.Set);
+            tortillaBacon.CheckProductPrice();
+            tortillaBacon.CheckProductIngredients();
+            Order.AddProduct(tortillaBacon);
+            ((MainWindow)Window.GetWindow(this)).CheckBill();
+
+        }
+        private void ButtonTortillaBaconEnlargedSet_Click(object sender, RoutedEventArgs e)
+        {
+            TortillaBacon tortillaBacon = new TortillaBacon(FormsFood.EnlargedSet);
+            tortillaBacon.CheckProductPrice();
+            tortillaBacon.CheckProductIngredients();
+            Order.AddProduct(tortillaBacon);
+            ((MainWindow)Window.GetWindow(this)).CheckBill();
         }
     }
 }

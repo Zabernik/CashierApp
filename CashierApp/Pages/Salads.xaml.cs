@@ -31,6 +31,7 @@ namespace CashierApp.Pages
         {
             Piccante piccante = new Piccante(FormsFood.Solo);
             piccante.CheckProductPrice();
+            piccante.CheckProductIngredients();
             Order.AddProduct(piccante);
             ((MainWindow)Window.GetWindow(this)).CheckBill();
         }

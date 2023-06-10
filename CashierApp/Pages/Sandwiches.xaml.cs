@@ -31,6 +31,7 @@ namespace CashierApp.Pages
         {
             Cheesburger cheesburger = new Cheesburger(FormsFood.Solo);
             cheesburger.CheckProductPrice();
+            cheesburger.CheckProductIngredients();
             Order.AddProduct(cheesburger);
             ((MainWindow)Window.GetWindow(this)).CheckBill();
 
@@ -39,7 +40,35 @@ namespace CashierApp.Pages
         {
             Cheesburger cheesburger = new Cheesburger(FormsFood.Set);
             cheesburger.CheckProductPrice();
+            cheesburger.CheckProductIngredients();
             Order.AddProduct(cheesburger);
+            ((MainWindow)Window.GetWindow(this)).CheckBill();
+        }
+
+        private void ButtonChickenBurger_Click(object sender, RoutedEventArgs e)
+        {
+            ChickenBurger chickenBurger = new ChickenBurger(FormsFood.Solo);
+            chickenBurger.CheckProductPrice();
+            chickenBurger.CheckProductIngredients();
+            Order.AddProduct(chickenBurger);
+            ((MainWindow)Window.GetWindow(this)).CheckBill();
+        }
+
+        private void ButtonChickenBurgerEnlargedSet_Click(object sender, RoutedEventArgs e)
+        {
+            ChickenBurger chickenBurger = new ChickenBurger(FormsFood.EnlargedSet);
+            chickenBurger.CheckProductPrice();
+            chickenBurger.CheckProductIngredients();
+            Order.AddProduct(chickenBurger);
+            ((MainWindow)Window.GetWindow(this)).CheckBill();
+        }
+
+        private void ButtonChickenBurgerSet_Click(object sender, RoutedEventArgs e)
+        {
+            ChickenBurger chickenBurger = new ChickenBurger(FormsFood.Set);
+            chickenBurger.CheckProductPrice();
+            chickenBurger.CheckProductIngredients();
+            Order.AddProduct(chickenBurger);
             ((MainWindow)Window.GetWindow(this)).CheckBill();
         }
     }

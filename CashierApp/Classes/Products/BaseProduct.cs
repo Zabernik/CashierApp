@@ -1,4 +1,5 @@
 ﻿using CashierApp.Enums;
+using CashierApp.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,10 +31,10 @@ namespace CashierApp.Classes.Products
 
         public override string ToString()
         {
-            return $"Dane produktu {ProductName} to: " +
-                $"ProductID - {ProductID} " +
-                $"IsUpsell - {IsUpsell} " +
-                $"Cena - {Price} ";
+            return $"Dane produktu {ProductName} to: \n" +
+                   $"ProductID - {ProductID} \n" +
+                   $"IsUpsell - {IsUpsell} \n" +
+                   $"Cena - {Price} \n";
         }
 
         public bool Equals(BaseProduct other)
@@ -75,6 +76,18 @@ namespace CashierApp.Classes.Products
             {
                 MessageBox.Show($"{this.ProductName} kosztuje {this.Price} PLN");
             }
+        }
+        public void CheckProductIngredients()
+        {
+            if (MainWindow.CheckIngredients is true)
+            {
+                MessageBox.Show($"{this.ProductName} zawiera: \n" +
+                    $"{this.CheckIngredients()}");
+            }
+        }
+        public virtual string CheckIngredients()
+        {
+            return "Brak wprowadzonego składu";
         }
     }
 }

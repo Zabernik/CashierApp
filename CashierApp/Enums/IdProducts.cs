@@ -10,11 +10,14 @@ namespace CashierApp.Enums
     {
         Cheesburger = 001,
         ChickenBurger = 002,
+        TortillaBacon = 003,
 
         CheesburgerSet = 201,
         ChickenBurgerSet = 202,
+        TortillaBaconSet = 203,
 
         ChickenBurgerEnlargedSet = 302,
+        TortillaBaconEnlargedSet = 303,
 
         Piccante = 401,
         PiccanteSet = 411,

@@ -34,6 +34,7 @@ namespace CashierApp
         }
         Order order = new Order(1);
         public static bool CheckPrice { get; set; } = false;
+        public static bool CheckIngredients { get; set; } = false;
         public void CheckBill()
         {
             ListBoxOrder.Items.Clear();
@@ -42,7 +43,6 @@ namespace CashierApp
                 if ((int)product > 500)
                 {
                     ListBoxOrder.Items.Add(new ListBoxItem { Content = $"- - - -> {product}", Foreground = Brushes.Green });
-                    //new SolidColorBrush(Colors.Aqua);
                 }
                 else
                 {
@@ -89,11 +89,31 @@ namespace CashierApp
         private void ButtonCheckPrice_Checked(object sender, RoutedEventArgs e)
         {
             CheckPrice = true;
+            if (CheckIngredients is true)
+            {
+                CheckIngredients = false;
+                ButtonCheckIngredients.IsChecked = false;
+            }
         }
 
         private void ButtonCheckPrice_Unchecked(object sender, RoutedEventArgs e)
         {
             CheckPrice = false;
+        }
+
+        private void ButtonCheckIngredients_Checked(object sender, RoutedEventArgs e)
+        {
+            CheckIngredients = true;
+            if (CheckPrice is true)
+            {
+                CheckPrice = false;
+                ButtonCheckPrice.IsChecked = false;
+            }
+        }
+
+        private void ButtonCheckIngredients_Unchecked(object sender, RoutedEventArgs e)
+        {
+            CheckIngredients = false;
         }
     }
 }

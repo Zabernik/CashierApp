@@ -11,6 +11,9 @@
     <Grid>
         <Button x:Name="ButtonCheesburger" Content="Cheesburger" HorizontalAlignment="Left" Height="85" Margin="30,29,0,0" VerticalAlignment="Top" Width="130" Click="ButtonCheesburger_Click"/>
         <Button x:Name="ButtonCheesburgerSet" Content="Cheesburger &#xA;Zestaw" HorizontalAlignment="Left" Height="85" Margin="160,29,0,0" VerticalAlignment="Top" Width="130" Click="ButtonCheesburgerSet_Click" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Button x:Name="ButtonChickenBurger" Content="Chicken Burger" HorizontalAlignment="Left" Height="85" Margin="30,114,0,0" VerticalAlignment="Top" Width="130" Click="ButtonChickenBurger_Click"/>
+        <Button x:Name="ButtonChickenBurgerSet" Content="Chicken Burger&#xD;&#xA;Zestaw" HorizontalAlignment="Left" Height="85" Margin="160,114,0,0" VerticalAlignment="Top" Width="130" Click="ButtonChickenBurgerSet_Click"/>
+        <Button x:Name="ButtonChickenBurgerEnlargedSet" Content="Chicken Burger&#xD;&#xA;Powiększony Zestaw" HorizontalAlignment="Left" Height="85" Margin="290,114,0,0" VerticalAlignment="Top" Width="130" Click="ButtonChickenBurgerEnlargedSet_Click"/>
 
     </Grid>
 </Page>

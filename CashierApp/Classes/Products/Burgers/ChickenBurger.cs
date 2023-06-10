@@ -23,17 +23,15 @@ namespace CashierApp.Classes.Products.Burgers
                 base.Price = 16.99m;
                 base.ProductID = IdProducts.ChickenBurgerSet;
             }
-            else
+            if (form == FormsFood.Solo)
             {
                 base.Price = 9.99m;
                 base.ProductID = IdProducts.ChickenBurger;
             }
         }
-        public void CheckIngredients()
+        public override string CheckIngredients()
         {
-            MessageBox.Show("Bułka z ziarnami, majonez, sałata, mięso z kurczaka");
+            return "Bułka z ziarnami, majonez, sałata, mięso z kurczaka";
         }
-
-
     }
 }

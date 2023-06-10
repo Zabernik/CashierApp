@@ -9,6 +9,9 @@
       Title="Wraps">
 
     <Grid>
-        
+        <Button x:Name="ButtonTortillaBacon" Content="Tortilla z bekonem" HorizontalAlignment="Left" Height="85" Margin="42,29,0,0" VerticalAlignment="Top" Width="130" Click="ButtonTortillaBacon_Click"/>
+        <Button x:Name="ButtonTortillaBaconSet" Content="Tortilla z bekonem&#xD;&#xA;Zestaw" HorizontalAlignment="Left" Height="85" Margin="172,29,0,0" VerticalAlignment="Top" Width="130" Click="ButtonTortillaBaconSet_Click"/>
+        <Button x:Name="ButtonTortillaBaconEnlargedSet" Content="Tortilla z bekonem&#xD;&#xA;Powiększony zestaw" HorizontalAlignment="Left" Height="85" Margin="302,29,0,0" VerticalAlignment="Top" Width="130" Click="ButtonTortillaBaconEnlargedSet_Click"/>
+
     </Grid>
 </Page>

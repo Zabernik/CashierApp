@@ -28,9 +28,9 @@ namespace CashierApp.Classes.Products.Burgers
                 base.ProductID = IdProducts.Cheesburger;
             }
         }
-        public void CheckIngredients()
+        public override string CheckIngredients()
         {
-            MessageBox.Show("Bułka bez ziaren, musztarda, ketchup, 2szt pikli, ser, mięso wołowe");
+            return ("Bułka bez ziaren, musztarda, ketchup, 2szt pikli, ser, mięso wołowe");
         }
     }
 }
