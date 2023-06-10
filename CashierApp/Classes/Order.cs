@@ -71,7 +71,20 @@ namespace CashierApp.Classes
             catch (ArgumentOutOfRangeException)
             {
                 MessageBox.Show("Najpierw zaznacz produkt do usunięcia");
-            }        
+            }
+            try
+            {
+                while ((int)Products[index] > 500)
+                {
+                    Products.RemoveAt(index);
+                    PriceProducts.RemoveAt(index);
+                }
+                OrderValue = PriceProducts.Sum();
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+
+            }
         }
     }
 }
