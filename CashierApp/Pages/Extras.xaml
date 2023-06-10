@@ -9,8 +9,18 @@
       Title="Extras">
 
     <Grid>
-        <Button x:Name="ButtonExtraChesse" Content="Ser" HorizontalAlignment="Left" Height="72" Margin="276,142,0,0" VerticalAlignment="Top" Width="124" Click="ButtonExtraChesse_Click"/>
-        <Button x:Name="ButtonExtraBacon" Content="Bekon" HorizontalAlignment="Left" Height="72" Margin="400,142,0,0" VerticalAlignment="Top" Width="124" Click="ButtonExtraBacon_Click"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="140*"/>
+            <ColumnDefinition Width="140*"/>
+            <ColumnDefinition Width="260*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="140*"/>
+        </Grid.RowDefinitions>
+        <Button x:Name="ButtonExtraChesse" Content="Ser" Click="ButtonExtraChesse_Click" Grid.Column="1" Grid.Row="0"/>
+        <Button x:Name="ButtonExtraBacon" Content="Bekon" Click="ButtonExtraBacon_Click" Grid.Column="0" Grid.Row="0"/>
 
     </Grid>
 </Page>

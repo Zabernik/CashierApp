@@ -5,25 +5,39 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CashierApp"
         mc:Ignorable="d"
-        Title="MainWindow" WindowState="Maximized" WindowStyle="None">
-    <Grid Height="575" Width="1048">
+        Title="MainWindow" WindowState="Maximized" WindowStyle="None" ResizeMode="NoResize">
+    <Grid Height="700" Width="1400">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150*"/>
+            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="130*"/>
+            <ColumnDefinition Width="130*"/>
+            <ColumnDefinition Width="130*"/>
+            <ColumnDefinition Width="130*"/>
+            <ColumnDefinition Width="130*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="74*"/>
-            <RowDefinition Height="501*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="450*"/>
+            <RowDefinition Height="50*"/>
         </Grid.RowDefinitions>
-        <Button x:Name="VoidButton" Content="Void" HorizontalAlignment="Left" Height="46" Margin="250,445,0,0" VerticalAlignment="Top" Width="126" Click="VoidButton_Click" Grid.Row="1"/>
-        <ToggleButton x:Name="ButtonCheckPrice" Content="Sprawdź Cene" HorizontalAlignment="Left" Height="46" Margin="376,445,0,0" VerticalAlignment="Top" Width="126" Grid.Row="1" Checked="ButtonCheckPrice_Checked" Unchecked="ButtonCheckPrice_Unchecked"/>
-        <ListBox x:Name="ListBoxOrder" HorizontalAlignment="Left" Height="528" VerticalAlignment="Top" Width="138" d:ItemsSource="{d:SampleData ItemCount=5}" Grid.RowSpan="2" Background="#FFC3C3C3"/>
-        <Label x:Name="LabelValue" Content="20 PLN" HorizontalAlignment="Left" Height="37" Margin="0,454,0,0" VerticalAlignment="Top" Width="250" FontSize="20" FontWeight="Bold" Grid.Row="1" Background="#FFC3C3C3"/>
-        <Frame x:Name="Main" NavigationUIVisibility="Hidden" HorizontalAlignment="Left" Height="445" Margin="252,74,0,0" VerticalAlignment="Top" Width="684" Grid.RowSpan="2"/>
-        <Button x:Name="ButtonSandwich" Content="Kanapki" HorizontalAlignment="Left" Height="74" Margin="247,0,0,0" VerticalAlignment="Center" Width="150" Click="ButtonSandwich_Click"/>
-        <Button x:Name="ButtonWraps" Content="Wrapy" HorizontalAlignment="Left" Height="74" Margin="397,0,0,0" VerticalAlignment="Center" Width="150" Click="ButtonWraps_Click"/>
-        <Button x:Name="ButtonSalads" Content="Sałatki" HorizontalAlignment="Left" Height="74" Margin="547,0,0,0" VerticalAlignment="Center" Width="150" Click="ButtonSalads_Click"/>
-        <Button x:Name="ButtonExtras" Content="Dodatki" HorizontalAlignment="Left" Height="37" Margin="697,0,0,0" VerticalAlignment="Top" Width="150" Click="ButtonExtras_Click"/>
-        <ListBox x:Name="ListBoxValue" HorizontalAlignment="Left" Height="528" Margin="138,0,0,0" VerticalAlignment="Top" Width="112" d:ItemsSource="{d:SampleData ItemCount=5}" Grid.RowSpan="2" Background="#FFC3C3C3"/>
-        <Button x:Name="ButtonDrinks" Content="Napoje" HorizontalAlignment="Left" Height="37" Margin="697,37,0,0" VerticalAlignment="Top" Width="150"/>
-        <Button x:Name="ButtonHotDrinks" Content="Ciepłe Napoje" HorizontalAlignment="Left" Height="37" Margin="847,0,0,0" VerticalAlignment="Top" Width="150" />
-        <Button x:Name="ButtonDeserts" Content="Desery" HorizontalAlignment="Left" Height="37" Margin="847,37,0,0" VerticalAlignment="Top" Width="150"/>
-        <ToggleButton x:Name="ButtonCheckIngredients" Content="Sprawdź Skład" HorizontalAlignment="Left" Height="46" Margin="502,445,0,0" Grid.Row="1" VerticalAlignment="Top" Width="126" RenderTransformOrigin="-0.005,0.476" Checked="ButtonCheckIngredients_Checked" Unchecked="ButtonCheckIngredients_Unchecked"/>
+        <ListBox x:Name="ListBoxOrder" Grid.Column="0" Grid.RowSpan="3" Background="#FFC3C3C3" FontSize="18"/>
+        <ListBox x:Name="ListBoxValue" Grid.RowSpan="3" Background="#FFC3C3C3" Grid.Column="1" FontSize="18"/>
+        <Label x:Name="LabelValue" Content="XX,XX PLN" FontWeight="Bold" Grid.Row="3" Background="#FFC3C3C3" Grid.ColumnSpan="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="23"/>
+
+        <Button x:Name="ButtonSandwich" Content="Kanapki" Click="ButtonSandwich_Click" Grid.Column="2" Grid.RowSpan="2"/>
+        <Button x:Name="ButtonWraps" Content="Wrapy"  Click="ButtonWraps_Click" Grid.Column="3" Grid.RowSpan="2"/>
+        <Button x:Name="ButtonSalads" Content="Sałatki" Click="ButtonSalads_Click" Grid.Column="4" Grid.RowSpan="2"/>
+        <Button x:Name="ButtonExtras" Content="Dodatki" Click="ButtonExtras_Click" Grid.Column="5" Grid.Row="0"/>
+        <Button x:Name="ButtonDrinks" Content="Napoje" Grid.Column="5" Grid.Row="1"/>
+        <Button x:Name="ButtonHotDrinks" Content="Ciepłe Napoje" Grid.Column="6" Grid.Row="0"/>
+        <Button x:Name="ButtonDeserts" Content="Desery" Grid.Column="6" Grid.Row="1"/>
+
+        <Frame x:Name="Main" NavigationUIVisibility="Hidden" Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="5"/>
+
+        <Button x:Name="VoidButton" Content="Void" Click="VoidButton_Click" Grid.Row="3" Grid.Column="2"/>
+        <ToggleButton x:Name="ButtonCheckPrice" Content="Sprawdź Cene" Grid.Row="3" Checked="ButtonCheckPrice_Checked" Unchecked="ButtonCheckPrice_Unchecked" Grid.Column="3"/>
+        <ToggleButton x:Name="ButtonCheckIngredients" Content="Sprawdź Skład" Grid.Row="3" Checked="ButtonCheckIngredients_Checked" Unchecked="ButtonCheckIngredients_Unchecked" Grid.Column="4"/>
     </Grid>
 </Window>
