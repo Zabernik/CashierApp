@@ -115,5 +115,49 @@ namespace CashierApp
         {
             CheckIngredients = false;
         }
+
+        private void SettleButton_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new SettlePage();
+            ButtonChange(Visibility.Hidden);
+        }
+
+        private void ButtonDeserts_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new Deserts();
+        }
+
+        private void ButtonHotDrinks_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new Drinks();
+        }
+
+        private void ButtonDrinks_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new HotDrinks();
+        }
+        private void ButtonChange(Visibility status)
+        {
+            ButtonCheckIngredients.Visibility = status;
+            ButtonCheckPrice.Visibility = status;
+            ButtonSalads.Visibility = status;
+            ButtonSandwich.Visibility = status;
+            ButtonWraps.Visibility = status;
+            ButtonExtras.Visibility = status;
+            ButtonHotDrinks.Visibility = status;
+            ButtonDrinks.Visibility = status;
+            ButtonDeserts.Visibility = status;
+            if (status is Visibility.Hidden)
+            {
+                ExitButton.Visibility = Visibility.Visible;
+            }
+            else { ExitButton.Visibility = Visibility.Hidden; }
+        }
+
+        private void ExitButton_Click(object sender, RoutedEventArgs e)
+        {
+            ButtonChange(Visibility.Visible);
+            Main.Content = new Welcome();
+        }
     }
 }

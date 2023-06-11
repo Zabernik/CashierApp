@@ -9,7 +9,19 @@
       Title="Salads">
 
     <Grid>
-        <Button x:Name="ButtonPiccante" Content="Piccante" HorizontalAlignment="Left" Height="85" Margin="10,10,0,0" VerticalAlignment="Top" Width="130" Click="ButtonPiccante_Click"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="130*"/>
+            <ColumnDefinition Width="130*"/>
+            <ColumnDefinition Width="130*"/>
+            <ColumnDefinition Width="260*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="160*"/>
+        </Grid.RowDefinitions>
+        <Button x:Name="ButtonPiccante" Content="Piccante" Click="ButtonPiccante_Click" Grid.Column="0" Grid.Row="1"/>
 
     </Grid>
 </Page>

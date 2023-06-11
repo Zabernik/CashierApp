@@ -30,14 +30,16 @@
         <Button x:Name="ButtonWraps" Content="Wrapy"  Click="ButtonWraps_Click" Grid.Column="3" Grid.RowSpan="2"/>
         <Button x:Name="ButtonSalads" Content="Sałatki" Click="ButtonSalads_Click" Grid.Column="4" Grid.RowSpan="2"/>
         <Button x:Name="ButtonExtras" Content="Dodatki" Click="ButtonExtras_Click" Grid.Column="5" Grid.Row="0"/>
-        <Button x:Name="ButtonDrinks" Content="Napoje" Grid.Column="5" Grid.Row="1"/>
-        <Button x:Name="ButtonHotDrinks" Content="Ciepłe Napoje" Grid.Column="6" Grid.Row="0"/>
-        <Button x:Name="ButtonDeserts" Content="Desery" Grid.Column="6" Grid.Row="1"/>
+        <Button x:Name="ButtonDrinks" Content="Napoje" Grid.Column="5" Grid.Row="1" Click="ButtonDrinks_Click"/>
+        <Button x:Name="ButtonHotDrinks" Content="Ciepłe Napoje" Grid.Column="6" Grid.Row="0" Click="ButtonHotDrinks_Click"/>
+        <Button x:Name="ButtonDeserts" Content="Desery" Grid.Column="6" Grid.Row="1" Click="ButtonDeserts_Click"/>
 
-        <Frame x:Name="Main" NavigationUIVisibility="Hidden" Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="5"/>
+        <Frame x:Name="Main" NavigationUIVisibility="Hidden" Grid.Column="2" Grid.ColumnSpan="5" Grid.RowSpan="4"/>
 
         <Button x:Name="VoidButton" Content="Void" Click="VoidButton_Click" Grid.Row="3" Grid.Column="2"/>
+        <Button x:Name="ExitButton" Visibility="Hidden" Content="Do Menu" Click="ExitButton_Click" Grid.Row="3" Grid.Column="3"/>
         <ToggleButton x:Name="ButtonCheckPrice" Content="Sprawdź Cene" Grid.Row="3" Checked="ButtonCheckPrice_Checked" Unchecked="ButtonCheckPrice_Unchecked" Grid.Column="3"/>
         <ToggleButton x:Name="ButtonCheckIngredients" Content="Sprawdź Skład" Grid.Row="3" Checked="ButtonCheckIngredients_Checked" Unchecked="ButtonCheckIngredients_Unchecked" Grid.Column="4"/>
+        <Button x:Name="SettleButton" Content="Rozlicz" Click="SettleButton_Click" Grid.Row="3" Grid.Column="6" Background="#FFA9FB7C" FontWeight="Bold" FontSize="16"/>
     </Grid>
 </Window>

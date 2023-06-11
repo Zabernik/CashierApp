@@ -1,0 +1,45 @@
+﻿<Page x:Class="CashierApp.Pages.SettlePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CashierApp.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="SettlePage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="110*"/>
+            <ColumnDefinition Width="120*"/>
+            <ColumnDefinition Width="75*"/>
+            <ColumnDefinition Width="75*"/>
+            <ColumnDefinition Width="75*"/>
+            <ColumnDefinition Width="130*"/>
+            <ColumnDefinition Width="130*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="50*"/>
+        </Grid.RowDefinitions>
+        <Button x:Name="ButtonCardPayment" Content="Karta" Grid.Column="0" Grid.Row="0"/>
+        <Button x:Name="ButtonCashPayment" Content="Gotówka" Grid.Column="1" Grid.Row="3"/>
+        <Button x:Name="ButtonCashAllPayment" Content="Co Do Grosza" Grid.Column="1" Grid.Row="4"/>
+        <Button x:Name="ButtonClear" Content="Wyczyść" Grid.Column="4" Grid.Row="5"/>
+        <Button x:Name="Button0Number" Content="0" Grid.Column="2" Grid.Row="5" Grid.ColumnSpan="2"/>
+        <Button x:Name="Button1Number" Content="1" Grid.Column="2" Grid.Row="4"/>
+        <Button x:Name="Button2Number" Content="2" Grid.Column="3" Grid.Row="4"/>
+        <Button x:Name="Button3Number" Content="3" Grid.Column="4" Grid.Row="4"/>
+        <Button x:Name="Button4Number" Content="4" Grid.Column="2" Grid.Row="3"/>
+        <Button x:Name="Button5Number" Content="5" Grid.Column="3" Grid.Row="3"/>
+        <Button x:Name="Button6Number" Content="6" Grid.Column="4" Grid.Row="3"/>
+        <Button x:Name="Button7Number" Content="7" Grid.Column="2" Grid.Row="2"/>
+        <Button x:Name="Button8Number" Content="8" Grid.Column="3" Grid.Row="2"/>
+        <Button x:Name="Button9Number" Content="9" Grid.Column="4" Grid.Row="2"/>
+    </Grid>
+</Page>
