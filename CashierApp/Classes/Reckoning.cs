@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace CashierApp.Classes
 {
@@ -25,6 +26,41 @@ namespace CashierApp.Classes
         public void ConvertToValue()
         {
             Value = Convert.ToDecimal(ValueText);
+        }
+        public bool SettleBill(string payment, decimal orderValue)
+        {
+            if (payment == "cash")
+            {
+                if (this.Value < orderValue || orderValue == 0)
+                {
+                    return false;
+                }
+                return true;
+            }
+            if (payment == "card")
+            {
+                return true;
+            }
+            if (payment == "fullCash")
+            {
+                if (orderValue == 0)
+                {
+                    return false;
+                }
+                return true;
+            }
+            if (payment != "fullCash" && payment != "card" && payment != "cash")
+            {
+                throw new Exception("NoSuchFormOfPayment");
+            }
+            return false;
+        }
+        public void PrintBill()
+        {
+            MessageBox.Show($"Print Bill \n" +
+                            $"Cashier - \n" +
+                            $"Value - \n" +
+                            $"Currency - ");
         }
     }
 }

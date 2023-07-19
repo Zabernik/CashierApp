@@ -147,6 +147,7 @@ namespace CashierApp
             ButtonHotDrinks.Visibility = status;
             ButtonDrinks.Visibility = status;
             ButtonDeserts.Visibility = status;
+            SettleButton.Visibility = status;
             if (status is Visibility.Hidden)
             {
                 ExitButton.Visibility = Visibility.Visible;

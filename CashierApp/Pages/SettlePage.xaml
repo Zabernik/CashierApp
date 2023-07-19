@@ -27,9 +27,9 @@
             <RowDefinition Height="40*"/>
             <RowDefinition Height="50*"/>
         </Grid.RowDefinitions>
-        <Button x:Name="ButtonCardPayment" Content="Karta" Grid.Column="0" Grid.Row="0"/>
-        <Button x:Name="ButtonCashPayment" Content="Gotówka" Grid.Column="1" Grid.Row="3"/>
-        <Button x:Name="ButtonCashAllPayment" Content="Co Do Grosza" Grid.Column="1" Grid.Row="4"/>
+        <Button x:Name="ButtonCardPayment" Content="Karta" Grid.Column="0" Grid.Row="0" Click="ButtonCardPayment_Click"/>
+        <Button x:Name="ButtonCashPayment" Content="Gotówka" Grid.Column="1" Grid.Row="3" Click="ButtonCashPayment_Click"/>
+        <Button x:Name="ButtonCashAllPayment" Content="Co Do Grosza" Grid.Column="1" Grid.Row="4" Click="ButtonCashAllPayment_Click"/>
         <Button x:Name="ButtonClear" Content="Wyczyść" Grid.Column="4" Grid.Row="5" Click="ButtonClear_Click"/>
         
         <Label x:Name="labelValue" Content="XX,XX PLN" FontWeight="Bold" Grid.Row="1" Background="#FFC3C3C3" Grid.Column="2" Grid.ColumnSpan="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="23"/>

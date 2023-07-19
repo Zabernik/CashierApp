@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace CashierApp.Classes
 {
-    internal class Cashier
+    public class Cashier
     {
+        public string Name { get; set; }
+        public int ID { get; set; }
+
     }
 }

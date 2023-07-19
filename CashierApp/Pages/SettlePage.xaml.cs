@@ -81,17 +81,12 @@ namespace CashierApp.Pages
 
         private void ButtonDot_Click(object sender, RoutedEventArgs e)
         {
-            //reck.ValueText += ",";
-            //reck.ConvertToValue();
-            //labelValue.Content = reck.ToString();
             ButtonMethod(",",true);
         }
 
         private void ButtonClear_Click(object sender, RoutedEventArgs e)
         {
-            reck.Value = default;
-            reck.ValueText = "0";
-            labelValue.Content = reck.ToString();
+            ClearMethod();
         }
         private void ButtonMethod(string number, bool ignore = false)
         {
@@ -115,6 +110,43 @@ namespace CashierApp.Pages
                 reck.ConvertToValue();
                 labelValue.Content = reck.ToString();
             }
+        }
+        private void ClearMethod()
+        {
+            reck.Value = default;
+            reck.ValueText = "0";
+            labelValue.Content = reck.ToString();
+        }
+
+        private void ButtonCashPayment_Click(object sender, RoutedEventArgs e)
+        {
+            if (reck.SettleBill("cash", Order.OrderValue) is true)
+            {
+                reck.PrintBill();
+            }
+            else
+            {
+                ClearMethod();
+                MessageBox.Show("Za mała kwota");
+            }
+        }
+
+        private void ButtonCashAllPayment_Click(object sender, RoutedEventArgs e)
+        {
+            if (reck.SettleBill("fullCash", Order.OrderValue) is true)
+            {
+                reck.PrintBill();
+            }
+            else
+            {
+                ClearMethod();
+                MessageBox.Show("Brak produktów w koszyku");
+            }
+        }
+
+        private void ButtonCardPayment_Click(object sender, RoutedEventArgs e)
+        {
+            bool successful = reck.SettleBill("card", Order.OrderValue);
         }
     }
 }
