@@ -31,10 +31,25 @@ namespace CashierApp
         {
             InitializeComponent();
             CheckBill();
+            newTr(Reckoning.StatusTr);
         }
-        Order order = new Order(1);
+        
+        Order order = new Order(1); //Instead of 1 there will be a data from db about id
         public static bool CheckPrice { get; set; } = false;
         public static bool CheckIngredients { get; set; } = false;
+        public void newTr(bool statusTr)
+        {
+            if (statusTr == true)
+            {
+                order = new Order(2); //Instead of 2 there will be a data from db about id
+                Order.OrderValue = 0;
+                Order.Products.Clear();
+                Order.PriceProducts.Clear();
+                CheckBill();
+                Main.Content = new Welcome();
+                ButtonChange(Visibility.Visible);
+            }
+        }
         public void CheckBill()
         {
             ListBoxOrder.Items.Clear();
@@ -56,6 +71,7 @@ namespace CashierApp
             }
             LabelValue.Content = $"{Order.OrderValue} PLN";
         }
+
         public int SelectIndex()
         {
             return ListBoxOrder.SelectedIndex;

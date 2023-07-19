@@ -12,6 +12,7 @@ namespace CashierApp.Classes
         public decimal Value { get; set; }
         public string ValueText { get; set; }
         public string Currency { get; set; }
+        public static bool StatusTr { get; set; } = false; //Status about end tr
 
         public Reckoning(decimal value = 00.00m, string currency = "PLN", string valueText = "0")
         {
@@ -61,6 +62,12 @@ namespace CashierApp.Classes
                             $"Cashier - \n" +
                             $"Value - \n" +
                             $"Currency - ");
+            endTr();
+        }
+        private void endTr()
+        {
+            StatusTr = true;
+            ((MainWindow)Application.Current.MainWindow).newTr(Reckoning.StatusTr);
         }
     }
 }
