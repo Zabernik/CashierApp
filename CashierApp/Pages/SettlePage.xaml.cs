@@ -152,5 +152,18 @@ namespace CashierApp.Pages
         {
             bool successful = reck.SettleBill("card", Order.OrderValue);
         }
+
+        private void ButtonEUROPayment_Click(object sender, RoutedEventArgs e)
+        {
+            if (reck.SettleBill("EURO", Order.OrderValue) is true)
+            {
+                reck.PrintBill();
+            }
+            else
+            {
+                ClearMethod();
+                MessageBox.Show("Za mała kwota");
+            }
+        }
     }
 }

@@ -58,6 +58,21 @@ namespace CashierApp.Classes
                 {
                     return false;
                 }
+                decimal rest = this.Value - orderValue;
+                MessageBox.Show($"Reszta do wydania to: {rest} PLN");
+                return true;
+            }
+            if (payment == "EURO")
+            {
+                decimal exchangeRate = 4.00m; //Here will be update by api actual exchange rate of EUR vs PLN
+                if (this.Value * exchangeRate < orderValue || orderValue == 0)
+                {
+                    return false;
+                }
+                this.Value = exchangeRate * this.Value;
+                this.Currency = "EUR";
+                decimal rest = this.Value - orderValue;
+                MessageBox.Show($"Reszta do wydania to: {rest} PLN");
                 return true;
             }
             if (payment == "card")

@@ -29,9 +29,10 @@
         </Grid.RowDefinitions>
         <Button x:Name="ButtonCardPayment" Content="Karta" Grid.Column="0" Grid.Row="0" Click="ButtonCardPayment_Click"/>
         <Button x:Name="ButtonCashPayment" Content="Gotówka" Grid.Column="1" Grid.Row="3" Click="ButtonCashPayment_Click"/>
+        <Button x:Name="ButtonEUROPayment" Content="EUR" Grid.Column="1" Grid.Row="2" Click="ButtonEUROPayment_Click" />
         <Button x:Name="ButtonCashAllPayment" Content="Co Do Grosza" Grid.Column="1" Grid.Row="4" Click="ButtonCashAllPayment_Click"/>
         <Button x:Name="ButtonClear" Content="Wyczyść" Grid.Column="4" Grid.Row="5" Click="ButtonClear_Click"/>
-        
+
         <Label x:Name="labelValue" Content="XX,XX PLN" FontWeight="Bold" Grid.Row="1" Background="#FFC3C3C3" Grid.Column="2" Grid.ColumnSpan="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="23"/>
 
         <Button x:Name="ButtonDot" Content="," Grid.Column="2" Grid.Row="5" Click="ButtonDot_Click"/>
@@ -45,5 +46,6 @@
         <Button x:Name="Button7Number" Content="7" Grid.Column="2" Grid.Row="2" Click="Button7Number_Click"/>
         <Button x:Name="Button8Number" Content="8" Grid.Column="3" Grid.Row="2" Click="Button8Number_Click"/>
         <Button x:Name="Button9Number" Content="9" Grid.Column="4" Grid.Row="2" Click="Button9Number_Click"/>
+        
     </Grid>
 </Page>
