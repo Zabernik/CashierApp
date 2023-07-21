@@ -10,12 +10,23 @@ using System.Windows.Controls;
 
 namespace CashierApp.Classes
 {
+    /// <summary>Class for delete and add products, contains all data about order picking</summary>
     public class Order
     {
+        /// <summary>Gets or sets the identifier of order</summary>
+        /// <value>The identifier.</value>
         public int Id { get; set; }
+        /// <summary>Gets or sets the order value by decimal.</summary>
+        /// <value>The order value.</value>
         public static decimal OrderValue { get; set; }
+        /// <summary>List of IdProducts (which sets on enum) on your Order</summary>
+        /// <value>The ID of products</value>
         public static List<IdProducts> Products { get; set; }
+        /// <summary>List of Price Products on your Order</summary>
+        /// <value>The price products.</value>
         public static List<decimal> PriceProducts { get; set; }
+        /// <summary>Initializes a new instance of the <see cref="Order" /> class.</summary>
+        /// <param name="id">The identifier.</param>
         public Order(int id)
         {
             Products = new List<IdProducts>();
@@ -23,10 +34,14 @@ namespace CashierApp.Classes
             Id = id;
         }
 
+        /// <summary>Converts to string.</summary>
+        /// <returns>A <see cref="System.String" /> that represents this instance.</returns>
         public override string ToString()
         {
             return $"{OrderValue} PLN";
         }
+        /// <summary>Method for adding products to your Order; list Products get's id of object, list PriceProducts get's decimal value of object</summary>
+        /// <param name="obj">The object of product adding to Order</param>
         public static void AddProduct(BaseProduct obj)
         {
             if (MainWindow.CheckPrice is false && MainWindow.CheckIngredients is false)
@@ -36,6 +51,9 @@ namespace CashierApp.Classes
                 OrderValue += obj.Price;
             }
         }
+        /// <summary>Method for adding extras to products on your Order; Checking if extras can be add to products (not to all can be, that's depend on number id)</summary>
+        /// <param name="obj">The object. of extras</param>
+        /// <param name="index">The index to check if extras can be add to product</param>
         public static void AddExtra(BaseExtra obj, int index)
         {
             if (MainWindow.CheckPrice is false && MainWindow.CheckIngredients is false)
@@ -60,6 +78,8 @@ namespace CashierApp.Classes
                 }
             }
         }
+        /// <summary>Method for deleting products from list Products/PriceProducts</summary>
+        /// <param name="index">The index of product to delete</param>
         public static void DeleteProduct(int index)
         {
             try

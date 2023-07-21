@@ -22,21 +22,28 @@ using System.Windows.Shapes;
 
 namespace CashierApp
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+    /// <summary> Flag for status</summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
             CheckBill();
-            newTr(Reckoning.StatusTr);
         }
-        
+
+        /// <summary>Create new first of the open app Order</summary>
         Order order = new Order(1); //Instead of 1 there will be a data from db about id
+        /// <summary>Gets or sets a value indicating whether toggle button of CheckPrice
+        /// is ON</summary>
+        /// <value>
+        ///   <c>true</c> if toggle button of CheckPrice is ON; otherwise, <c>false</c>.</value>
         public static bool CheckPrice { get; set; } = false;
+        /// <summary>Gets or sets a value indicating whether toggle button of CheckIngredients is ON</summary>
+        /// <value>
+        ///   <c>true</c> if toggle button of CheckIngredients is ON; otherwise, <c>false</c>.</value>
         public static bool CheckIngredients { get; set; } = false;
+        /// <summary>That method is using when last transaction is full payment. Create new Order, set value of labels to 0/null</summary>
+        /// <param name="statusTr">if set to <c>true</c> that's mean last transaction was full paid</param>
         public void newTr(bool statusTr)
         {
             if (statusTr == true)
@@ -50,6 +57,7 @@ namespace CashierApp
                 ButtonChange(Visibility.Visible);
             }
         }
+        /// <summary>This method clears all labels; all products in Order.Products is added to labels; for extras is given extra "- - -&gt;"</summary>
         public void CheckBill()
         {
             ListBoxOrder.Items.Clear();
@@ -72,6 +80,9 @@ namespace CashierApp
             LabelValue.Content = $"{Order.OrderValue} PLN";
         }
 
+        /// <summary>Method for return index of
+        /// actual selected item</summary>
+        /// <returns>int index of actual selected item</returns>
         public int SelectIndex()
         {
             return ListBoxOrder.SelectedIndex;
@@ -152,6 +163,8 @@ namespace CashierApp
         {
             Main.Content = new HotDrinks();
         }
+        /// <summary>This method is used for hide/show menu buttons</summary>
+        /// <param name="status">The status of button we want to have</param>
         private void ButtonChange(Visibility status)
         {
             ButtonCheckIngredients.Visibility = status;

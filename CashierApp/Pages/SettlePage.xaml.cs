@@ -88,6 +88,9 @@ namespace CashierApp.Pages
         {
             ClearMethod();
         }
+        /// <summary>That method is using to operate the number button etc.</summary>
+        /// <param name="number">The number or value we want to be give to Reckoning propert ValueText</param>
+        /// <param name="ignore">if set to <c>true</c> [ignore].</param>
         private void ButtonMethod(string number, bool ignore = false)
         {
             string test = reck.ValueText;
@@ -111,6 +114,7 @@ namespace CashierApp.Pages
                 labelValue.Content = reck.ToString();
             }
         }
+        /// <summary>That method clears reckoning and setting value to default/0</summary>
         private void ClearMethod()
         {
             reck.Value = default;
