@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CashierApp.Classes.DB;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,7 @@ namespace CashierApp.Classes
         /// <value>
         ///   <c>False </c>if transaction is on order and payment doesn't end ; otherwise, <c>true</c>.</value>
         public static bool StatusTr { get; set; } = false;
+        private decimal Rest { get; set; } = 0;
 
         /// <summary>Initializes a new instance of the <see cref="Reckoning" /> class.</summary>
         /// <param name="value">The value.</param>
@@ -58,8 +60,9 @@ namespace CashierApp.Classes
                 {
                     return false;
                 }
-                decimal rest = this.Value - orderValue;
-                MessageBox.Show($"Reszta do wydania to: {rest} PLN");
+                Rest = this.Value - orderValue;
+                MessageBox.Show($"Reszta do wydania to: {Rest} PLN");
+                TransferDataPayment("Cash - PLN", Order.OrderValue, Rest);
                 return true;
             }
             if (payment == "EURO")
@@ -71,12 +74,14 @@ namespace CashierApp.Classes
                 }
                 this.Value = exchangeRate * this.Value;
                 this.Currency = "EUR";
-                decimal rest = this.Value - orderValue;
-                MessageBox.Show($"Reszta do wydania to: {rest} PLN");
+                Rest = this.Value - orderValue;
+                MessageBox.Show($"Reszta do wydania to: {Rest} PLN");
+                TransferDataPayment("Cash - EURO", this.Value, Rest);
                 return true;
             }
             if (payment == "card")
             {
+                TransferDataPayment("CARD", Order.OrderValue, Rest);
                 return true;
             }
             if (payment == "fullCash")
@@ -85,6 +90,7 @@ namespace CashierApp.Classes
                 {
                     return false;
                 }
+                TransferDataPayment("Cash - PLN", Order.OrderValue, Rest);
                 return true;
             }
             if (payment != "fullCash" && payment != "card" && payment != "cash")
@@ -96,10 +102,12 @@ namespace CashierApp.Classes
         /// <summary>Method for future send data to print a bill and send data to db</summary>
         public void PrintBill()
         {
-            MessageBox.Show($"Print Bill \n" +
+
+            MessageBox.Show($"Print Bill... \n" +
                             $"Cashier - \n" +
-                            $"Value - \n" +
-                            $"Currency - ");
+                            $"Value - {this.ValueText}\n" +
+                            $"Currency - {this.Currency}\n" +
+                            $"Rest - {this.Rest}\n");
             endTr();
         }
         /// <summary>When transaction is done, flag StatusTr is set to true and start running other method newTr from MainWindow</summary>
@@ -107,6 +115,25 @@ namespace CashierApp.Classes
         {
             StatusTr = true;
             ((MainWindow)Application.Current.MainWindow).newTr(Reckoning.StatusTr);
+        }
+        /// <summary>Transfers to DB the data payment of open order.</summary>
+        /// <param name="payment">The type of payment.</param>
+        /// <param name="value">The value from Order class</param>
+        /// <param name="rest">The rest.</param>
+        private void TransferDataPayment(string payment, decimal value, decimal rest = 0)
+        {
+            using(DataBaseContext conn = new DataBaseContext()) 
+            {
+                var order = conn.Orders.SingleOrDefault(x => x.Id == Order.Id);
+                if (order != null) 
+                { 
+                    order.OrderValue = value;
+                    order.Rest = rest;
+                    order.PaymentMethod = payment;
+                    order.IsFinished = true;
+                    conn.SaveChanges();
+                }
+            }
         }
     }
 }

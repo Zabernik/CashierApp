@@ -12,14 +12,15 @@ namespace CashierApp.Classes.DB
     {
         [Key]
         public int Id { get; set; }
-        public decimal OrderValue { get; set; }
-        public decimal Rest { get; set; }
-        public string CashierName { get; set; }
+        public decimal? OrderValue { get; set; }
+        public decimal? Rest { get; set; }
+        public string? CashierName { get; set; }
         [ForeignKey("Cashier")]
-        public string CashierID { get; set; }
-        public Cashier Cashier { get; set; }
-        public string PaymentMethod { get; set; }
+        public string? CashierID { get; set; }
+        public Cashier? Cashier { get; set; }
+        public string? PaymentMethod { get; set; }
         public DateTime DataOfOrder { get; set; }
+        public bool IsFinished { get; set; }
     }
     public class Cashier //There will be data about cashier
     {

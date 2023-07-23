@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using CashierApp.Classes.DB;
 
 namespace CashierApp.Classes
 {
@@ -15,7 +16,7 @@ namespace CashierApp.Classes
     {
         /// <summary>Gets or sets the identifier of order</summary>
         /// <value>The identifier.</value>
-        public int Id { get; set; }
+        public static int Id { get; set; }
         /// <summary>Gets or sets the order value by decimal.</summary>
         /// <value>The order value.</value>
         public static decimal OrderValue { get; set; }
@@ -32,6 +33,7 @@ namespace CashierApp.Classes
             Products = new List<IdProducts>();
             PriceProducts = new List<decimal>();
             Id = id;
+            TransferDataID(id);
         }
 
         /// <summary>Converts to string.</summary>
@@ -104,6 +106,22 @@ namespace CashierApp.Classes
             catch (ArgumentOutOfRangeException)
             {
 
+            }
+        }
+        /// <summary>Transfers to DB the identifier of new order.</summary>
+        /// <param name="id">The identifier new order</param>
+        private void TransferDataID(int id)//Transfer ID to db
+        {
+            using (DataBaseContext conn = new DataBaseContext())
+            {
+                while (conn.Orders.Any(idExist => idExist.Id == id))
+                {
+                    id += 1;
+                    Id = id;
+                }
+                Orders newOrder = new Orders {Id = id, IsFinished = false, DataOfOrder = DateTime.Now };
+                conn.Add<Orders>(newOrder);
+                conn.SaveChanges();
             }
         }
     }
