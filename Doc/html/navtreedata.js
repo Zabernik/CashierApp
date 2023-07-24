@@ -52,9 +52,9 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_8_n_e_t_core_app_00_version_0av6_80_8_assembly_attributes_8cs.html",
-"_hot_drinks_8xaml_8cs.html",
-"class_cashier_app_1_1_main_window.html#adf2e5137e067ea9f0935893e9ba423b2",
-"dir_07908d6c9ec02660130a55d9ba46311e.html"
+"_cashier_app__xcp0coly__wpftmp_8_assembly_info_8cs.html",
+"class_cashier_app_1_1_classes_1_1_products_1_1_salads_1_1_piccante.html",
+"class_cashier_app_1_1_pages_1_1_sandwiches.html#a6ec74d370f8c012311f233cfbd819f08"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

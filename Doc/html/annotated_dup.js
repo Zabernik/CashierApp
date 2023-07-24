@@ -2,6 +2,13 @@ var annotated_dup =
 [
     [ "CashierApp", "namespace_cashier_app.html", [
       [ "Classes", "namespace_cashier_app_1_1_classes.html", [
+        [ "DB", "namespace_cashier_app_1_1_classes_1_1_d_b.html", [
+          [ "Cashier", "class_cashier_app_1_1_classes_1_1_d_b_1_1_cashier.html", "class_cashier_app_1_1_classes_1_1_d_b_1_1_cashier" ],
+          [ "CashierUpsell", "class_cashier_app_1_1_classes_1_1_d_b_1_1_cashier_upsell.html", "class_cashier_app_1_1_classes_1_1_d_b_1_1_cashier_upsell" ],
+          [ "DataBaseContext", "class_cashier_app_1_1_classes_1_1_d_b_1_1_data_base_context.html", "class_cashier_app_1_1_classes_1_1_d_b_1_1_data_base_context" ],
+          [ "Orders", "class_cashier_app_1_1_classes_1_1_d_b_1_1_orders.html", "class_cashier_app_1_1_classes_1_1_d_b_1_1_orders" ],
+          [ "RestaurantUpsell", "class_cashier_app_1_1_classes_1_1_d_b_1_1_restaurant_upsell.html", "class_cashier_app_1_1_classes_1_1_d_b_1_1_restaurant_upsell" ]
+        ] ],
         [ "Products", "namespace_cashier_app_1_1_classes_1_1_products.html", [
           [ "Burgers", "namespace_cashier_app_1_1_classes_1_1_products_1_1_burgers.html", [
             [ "Cheesburger", "class_cashier_app_1_1_classes_1_1_products_1_1_burgers_1_1_cheesburger.html", "class_cashier_app_1_1_classes_1_1_products_1_1_burgers_1_1_cheesburger" ],
@@ -20,9 +27,9 @@ var annotated_dup =
           [ "BaseExtra", "class_cashier_app_1_1_classes_1_1_products_1_1_base_extra.html", "class_cashier_app_1_1_classes_1_1_products_1_1_base_extra" ],
           [ "BaseProduct", "class_cashier_app_1_1_classes_1_1_products_1_1_base_product.html", "class_cashier_app_1_1_classes_1_1_products_1_1_base_product" ]
         ] ],
-        [ "Cashier", "class_cashier_app_1_1_classes_1_1_cashier.html", "class_cashier_app_1_1_classes_1_1_cashier" ],
         [ "Order", "class_cashier_app_1_1_classes_1_1_order.html", "class_cashier_app_1_1_classes_1_1_order" ],
-        [ "Reckoning", "class_cashier_app_1_1_classes_1_1_reckoning.html", "class_cashier_app_1_1_classes_1_1_reckoning" ]
+        [ "Reckoning", "class_cashier_app_1_1_classes_1_1_reckoning.html", "class_cashier_app_1_1_classes_1_1_reckoning" ],
+        [ "User", "class_cashier_app_1_1_classes_1_1_user.html", "class_cashier_app_1_1_classes_1_1_user" ]
       ] ],
       [ "Interfaces", "namespace_cashier_app_1_1_interfaces.html", [
         [ "IDescription", "interface_cashier_app_1_1_interfaces_1_1_i_description.html", "interface_cashier_app_1_1_interfaces_1_1_i_description" ]
@@ -39,6 +46,7 @@ var annotated_dup =
         [ "Wraps", "class_cashier_app_1_1_pages_1_1_wraps.html", "class_cashier_app_1_1_pages_1_1_wraps" ]
       ] ],
       [ "App", "class_cashier_app_1_1_app.html", "class_cashier_app_1_1_app" ],
+      [ "Login", "class_cashier_app_1_1_login.html", "class_cashier_app_1_1_login" ],
       [ "MainWindow", "class_cashier_app_1_1_main_window.html", "class_cashier_app_1_1_main_window" ]
     ] ]
 ];

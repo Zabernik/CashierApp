@@ -31,7 +31,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="CashAppLogo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">CashierApp<span id="projectnumber">&#160;0.5.1v</span>
+   <div id="projectname">CashierApp<span id="projectnumber">&#160;0.5.7v</span>
    </div>
    <div id="projectbrief">Application for cash register</div>
   </td>
@@ -101,6 +101,7 @@ $(document).ready(function(){initNavTree('class_cashier_app_1_1_classes_1_1_orde
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#properties">Properties</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="class_cashier_app_1_1_classes_1_1_order-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">CashierApp.Classes.Order Class Reference</div></div>
 </div><!--header-->
@@ -132,7 +133,7 @@ Static Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:a5b7e34fc9785c8ee8d0b7c07f7fddda4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cashier_app_1_1_classes_1_1_order.html#a5b7e34fc9785c8ee8d0b7c07f7fddda4">Id</a><code> [get, set]</code></td></tr>
+<tr class="memitem:a5b7e34fc9785c8ee8d0b7c07f7fddda4"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cashier_app_1_1_classes_1_1_order.html#a5b7e34fc9785c8ee8d0b7c07f7fddda4">Id</a><code> [get, set]</code></td></tr>
 <tr class="memdesc:a5b7e34fc9785c8ee8d0b7c07f7fddda4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the identifier of order.  <br /></td></tr>
 <tr class="separator:a5b7e34fc9785c8ee8d0b7c07f7fddda4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a586e10ee262593b299a08d2acafcad53"><td class="memItemLeft" align="right" valign="top">static decimal&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cashier_app_1_1_classes_1_1_order.html#a586e10ee262593b299a08d2acafcad53">OrderValue</a><code> [get, set]</code></td></tr>
@@ -144,6 +145,12 @@ Properties</h2></td></tr>
 <tr class="memitem:a1e72a4dcd7ad01c2b5eb230e0267d7b1"><td class="memItemLeft" align="right" valign="top">static List&lt; decimal &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cashier_app_1_1_classes_1_1_order.html#a1e72a4dcd7ad01c2b5eb230e0267d7b1">PriceProducts</a><code> [get, set]</code></td></tr>
 <tr class="memdesc:a1e72a4dcd7ad01c2b5eb230e0267d7b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of Price Products on your Order.  <br /></td></tr>
 <tr class="separator:a1e72a4dcd7ad01c2b5eb230e0267d7b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a38e1ed672f95e4f35eba7de1ac51cc0f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cashier_app_1_1_classes_1_1_order.html#a38e1ed672f95e4f35eba7de1ac51cc0f">TransferDataID</a> (int id)</td></tr>
+<tr class="memdesc:a38e1ed672f95e4f35eba7de1ac51cc0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transfers to DB the identifier of new order.  <br /></td></tr>
+<tr class="separator:a38e1ed672f95e4f35eba7de1ac51cc0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class for delete and add products, contains all data about order picking. </p>
@@ -308,6 +315,40 @@ Properties</h2></td></tr>
 
 </div>
 </div>
+<a id="a38e1ed672f95e4f35eba7de1ac51cc0f" name="a38e1ed672f95e4f35eba7de1ac51cc0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38e1ed672f95e4f35eba7de1ac51cc0f">&#9670;&#160;</a></span>TransferDataID()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CashierApp.Classes.Order.TransferDataID </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Transfers to DB the identifier of new order. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>The identifier new order</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <h2 class="groupheader">Property Documentation</h2>
 <a id="a5b7e34fc9785c8ee8d0b7c07f7fddda4" name="a5b7e34fc9785c8ee8d0b7c07f7fddda4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5b7e34fc9785c8ee8d0b7c07f7fddda4">&#9670;&#160;</a></span>Id</h2>
@@ -324,7 +365,7 @@ Properties</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

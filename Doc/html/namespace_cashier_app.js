@@ -25,5 +25,6 @@ var namespace_cashier_app =
     [ "Interfaces", "namespace_cashier_app_1_1_interfaces.html", "namespace_cashier_app_1_1_interfaces" ],
     [ "Pages", "namespace_cashier_app_1_1_pages.html", "namespace_cashier_app_1_1_pages" ],
     [ "App", "class_cashier_app_1_1_app.html", "class_cashier_app_1_1_app" ],
+    [ "Login", "class_cashier_app_1_1_login.html", "class_cashier_app_1_1_login" ],
     [ "MainWindow", "class_cashier_app_1_1_main_window.html", "class_cashier_app_1_1_main_window" ]
 ];

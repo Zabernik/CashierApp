@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['voidbutton_0',['VoidButton',['../class_cashier_app_1_1_main_window.html#ad7acf63f9fc00a57a6416b4e00ad4fe8',1,'CashierApp::MainWindow']]]
+  ['reck_0',['reck',['../class_cashier_app_1_1_pages_1_1_settle_page.html#a985a086962f34769832435fd5eab26ff',1,'CashierApp::Pages::SettlePage']]]
 ];

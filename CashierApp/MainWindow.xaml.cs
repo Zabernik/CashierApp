@@ -29,8 +29,8 @@ namespace CashierApp
         {
             InitializeComponent();
             CheckBill();
+            CashierName.Content = User.Name;
         }
-
         /// <summary>Create new first of the open app Order</summary>
         Order order = new Order(1); //Instead of 1 there will be a data from db about id
         /// <summary>Gets or sets a value indicating whether toggle button of CheckPrice

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['hotdrinks_0',['HotDrinks',['../class_cashier_app_1_1_pages_1_1_hot_drinks.html#ad5db48f4a2805359dbb728f0f5873be6',1,'CashierApp::Pages::HotDrinks']]]
+  ['getid_0',['GetID',['../class_cashier_app_1_1_classes_1_1_user.html#a887693b8cc5eee164e7119eb58c7ec1b',1,'CashierApp::Classes::User']]],
+  ['getname_1',['GetName',['../class_cashier_app_1_1_classes_1_1_user.html#a8177018b4d95839c4e1253762c6af57d',1,'CashierApp::Classes::User']]]
 ];

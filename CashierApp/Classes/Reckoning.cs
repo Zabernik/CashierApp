@@ -114,7 +114,7 @@ namespace CashierApp.Classes
         private void endTr()
         {
             StatusTr = true;
-            ((MainWindow)Application.Current.MainWindow).newTr(Reckoning.StatusTr);
+            ((MainWindow)Application.Current.MainWindow).newTr(StatusTr);
         }
         /// <summary>Transfers to DB the data payment of open order.</summary>
         /// <param name="payment">The type of payment.</param>

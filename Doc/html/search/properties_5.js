@@ -1,8 +1,5 @@
 var searchData=
 [
-  ['price_0',['Price',['../class_cashier_app_1_1_classes_1_1_products_1_1_base_extra.html#ae8d02047224ca1f36476a9dcae9d216f',1,'CashierApp.Classes.Products.BaseExtra.Price'],['../class_cashier_app_1_1_classes_1_1_products_1_1_base_product.html#a19ad1f8ccf39eb0baae93c20fec037cd',1,'CashierApp.Classes.Products.BaseProduct.Price']]],
-  ['priceproducts_1',['PriceProducts',['../class_cashier_app_1_1_classes_1_1_order.html#a1e72a4dcd7ad01c2b5eb230e0267d7b1',1,'CashierApp::Classes::Order']]],
-  ['productid_2',['ProductID',['../class_cashier_app_1_1_classes_1_1_products_1_1_base_product.html#a5eeb67731f83beee9d3449cd7f81e73f',1,'CashierApp::Classes::Products::BaseProduct']]],
-  ['productname_3',['ProductName',['../class_cashier_app_1_1_classes_1_1_products_1_1_base_product.html#ac06268f5e230d71064c8e561234db344',1,'CashierApp::Classes::Products::BaseProduct']]],
-  ['products_4',['Products',['../class_cashier_app_1_1_classes_1_1_order.html#acb810a73d90340166fc2b5ecffaa3e83',1,'CashierApp::Classes::Order']]]
+  ['orders_0',['Orders',['../class_cashier_app_1_1_classes_1_1_d_b_1_1_data_base_context.html#a63bebc24232ce082281a8d87e930ef97',1,'CashierApp::Classes::DB::DataBaseContext']]],
+  ['ordervalue_1',['OrderValue',['../class_cashier_app_1_1_classes_1_1_d_b_1_1_orders.html#af2d30fdece2e6ca5e78f18759b174f0f',1,'CashierApp.Classes.DB.Orders.OrderValue'],['../class_cashier_app_1_1_classes_1_1_order.html#a586e10ee262593b299a08d2acafcad53',1,'CashierApp.Classes.Order.OrderValue']]]
 ];

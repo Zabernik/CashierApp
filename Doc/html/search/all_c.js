@@ -1,5 +1,8 @@
 var searchData=
 [
-  ['name_0',['Name',['../class_cashier_app_1_1_classes_1_1_cashier.html#a952cbad79f78c27f98030f784fadab81',1,'CashierApp.Classes.Cashier.Name'],['../class_cashier_app_1_1_classes_1_1_products_1_1_base_extra.html#a9eec2ff1dbb3adef8c6140c573a51ff9',1,'CashierApp.Classes.Products.BaseExtra.Name']]],
-  ['newtr_1',['newTr',['../class_cashier_app_1_1_main_window.html#ac9b1bac62d3d833714c125dd2a87e4ae',1,'CashierApp::MainWindow']]]
+  ['main_0',['Main',['../class_cashier_app_1_1_main_window.html#ab92a1f2afa2efc46faa683db30e16201',1,'CashierApp.MainWindow.Main'],['../class_cashier_app_1_1_app.html#a9c52cb87c0645cce18445794db3fe5f9',1,'CashierApp.App.Main()'],['../class_cashier_app_1_1_app.html#a9c52cb87c0645cce18445794db3fe5f9',1,'CashierApp.App.Main()']]],
+  ['mainwindow_1',['MainWindow',['../class_cashier_app_1_1_main_window.html',1,'CashierApp.MainWindow'],['../class_cashier_app_1_1_main_window.html#ad3a74967bffb8f1f1c31863b9782a271',1,'CashierApp.MainWindow.MainWindow()']]],
+  ['mainwindow_2eg_2ecs_2',['MainWindow.g.cs',['../_main_window_8g_8cs.html',1,'']]],
+  ['mainwindow_2eg_2ei_2ecs_3',['MainWindow.g.i.cs',['../_main_window_8g_8i_8cs.html',1,'']]],
+  ['mainwindow_2examl_2ecs_4',['MainWindow.xaml.cs',['../_main_window_8xaml_8cs.html',1,'']]]
 ];

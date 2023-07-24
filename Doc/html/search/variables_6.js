@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['order_0',['order',['../class_cashier_app_1_1_main_window.html#a7b3fbb05a1eeb797f2a864b781e226cf',1,'CashierApp::MainWindow']]]
+  ['main_0',['Main',['../class_cashier_app_1_1_main_window.html#ab92a1f2afa2efc46faa683db30e16201',1,'CashierApp::MainWindow']]]
 ];

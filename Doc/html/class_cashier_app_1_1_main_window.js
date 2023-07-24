@@ -33,6 +33,7 @@ var class_cashier_app_1_1_main_window =
     [ "ButtonSalads", "class_cashier_app_1_1_main_window.html#a66a6162c4f3c3ea481eb20b3cfde44db", null ],
     [ "ButtonSandwich", "class_cashier_app_1_1_main_window.html#a6fa545a7cf19434bfd3a4f855475d84a", null ],
     [ "ButtonWraps", "class_cashier_app_1_1_main_window.html#a734f4908b8747c1558347cee237a0cd4", null ],
+    [ "CashierName", "class_cashier_app_1_1_main_window.html#a4cb7fe573d53ae8b8c1e9352894c6be0", null ],
     [ "ExitButton", "class_cashier_app_1_1_main_window.html#adf2e5137e067ea9f0935893e9ba423b2", null ],
     [ "LabelValue", "class_cashier_app_1_1_main_window.html#af78fff0cad2c9e20a3de3ea1a5ae5092", null ],
     [ "ListBoxOrder", "class_cashier_app_1_1_main_window.html#a31fc19109884caf4a452034acdb60d4d", null ],

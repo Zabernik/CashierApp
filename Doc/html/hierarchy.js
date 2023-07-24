@@ -6,8 +6,13 @@ var hierarchy =
     [ "System.Windows.Application", null, [
       [ "CashierApp.App", "class_cashier_app_1_1_app.html", null ]
     ] ],
-    [ "CashierApp.Classes.Cashier", "class_cashier_app_1_1_classes_1_1_cashier.html", null ],
+    [ "CashierApp.Classes.DB.Cashier", "class_cashier_app_1_1_classes_1_1_d_b_1_1_cashier.html", null ],
+    [ "CashierApp.Classes.DB.CashierUpsell", "class_cashier_app_1_1_classes_1_1_d_b_1_1_cashier_upsell.html", null ],
+    [ "DbContext", null, [
+      [ "CashierApp.Classes.DB.DataBaseContext", "class_cashier_app_1_1_classes_1_1_d_b_1_1_data_base_context.html", null ]
+    ] ],
     [ "System.Windows.Markup.IComponentConnector", null, [
+      [ "CashierApp.Login", "class_cashier_app_1_1_login.html", null ],
       [ "CashierApp.MainWindow", "class_cashier_app_1_1_main_window.html", null ],
       [ "CashierApp.Pages.Deserts", "class_cashier_app_1_1_pages_1_1_deserts.html", null ],
       [ "CashierApp.Pages.Drinks", "class_cashier_app_1_1_pages_1_1_drinks.html", null ],
@@ -40,6 +45,7 @@ var hierarchy =
       ] ]
     ] ],
     [ "CashierApp.Classes.Order", "class_cashier_app_1_1_classes_1_1_order.html", null ],
+    [ "CashierApp.Classes.DB.Orders", "class_cashier_app_1_1_classes_1_1_d_b_1_1_orders.html", null ],
     [ "System.Windows.Controls.Page", null, [
       [ "CashierApp.Pages.Deserts", "class_cashier_app_1_1_pages_1_1_deserts.html", null ],
       [ "CashierApp.Pages.Drinks", "class_cashier_app_1_1_pages_1_1_drinks.html", null ],
@@ -52,10 +58,13 @@ var hierarchy =
       [ "CashierApp.Pages.Wraps", "class_cashier_app_1_1_pages_1_1_wraps.html", null ]
     ] ],
     [ "CashierApp.Classes.Reckoning", "class_cashier_app_1_1_classes_1_1_reckoning.html", null ],
+    [ "CashierApp.Classes.DB.RestaurantUpsell", "class_cashier_app_1_1_classes_1_1_d_b_1_1_restaurant_upsell.html", null ],
+    [ "CashierApp.Classes.User", "class_cashier_app_1_1_classes_1_1_user.html", null ],
     [ "System.Windows.Window", null, [
+      [ "CashierApp.Login", "class_cashier_app_1_1_login.html", null ],
       [ "CashierApp.MainWindow", "class_cashier_app_1_1_main_window.html", null ]
     ] ],
     [ "Window", null, [
-      [ "CashierApp.MainWindow", "class_cashier_app_1_1_main_window.html", null ]
+      [ "CashierApp.Login", "class_cashier_app_1_1_login.html", null ]
     ] ]
 ];

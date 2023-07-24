@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['welcome_0',['Welcome',['../class_cashier_app_1_1_pages_1_1_welcome.html',1,'CashierApp::Pages']]],
-  ['wraps_1',['Wraps',['../class_cashier_app_1_1_pages_1_1_wraps.html',1,'CashierApp::Pages']]]
+  ['tortillabacon_0',['TortillaBacon',['../class_cashier_app_1_1_classes_1_1_products_1_1_wraps_1_1_tortilla_bacon.html',1,'CashierApp::Classes::Products::Wraps']]]
 ];

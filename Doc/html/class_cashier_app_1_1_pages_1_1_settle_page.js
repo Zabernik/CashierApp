@@ -16,6 +16,7 @@ var class_cashier_app_1_1_pages_1_1_settle_page =
     [ "ButtonCashPayment_Click", "class_cashier_app_1_1_pages_1_1_settle_page.html#a0e737415a8ee59f7c0532600a2cffb92", null ],
     [ "ButtonClear_Click", "class_cashier_app_1_1_pages_1_1_settle_page.html#a158d0ecb74f59ae0352806074059a9de", null ],
     [ "ButtonDot_Click", "class_cashier_app_1_1_pages_1_1_settle_page.html#a6eb32db32419520263ec494f9185a222", null ],
+    [ "ButtonEUROPayment_Click", "class_cashier_app_1_1_pages_1_1_settle_page.html#a777977b011cfc6fe15ef68f40c347a3a", null ],
     [ "ButtonMethod", "class_cashier_app_1_1_pages_1_1_settle_page.html#ae0bbdc8ae82ed9255f2fc71c45ed91a0", null ],
     [ "ClearMethod", "class_cashier_app_1_1_pages_1_1_settle_page.html#aa232dda46763371d8f782eb6424c8f09", null ],
     [ "Connect", "class_cashier_app_1_1_pages_1_1_settle_page.html#ab70a11b94e745f81fc3d6a79ecaf407f", null ],
@@ -38,6 +39,7 @@ var class_cashier_app_1_1_pages_1_1_settle_page =
     [ "ButtonCashPayment", "class_cashier_app_1_1_pages_1_1_settle_page.html#a4bd551e96644cb872a3a85975aef9fc6", null ],
     [ "ButtonClear", "class_cashier_app_1_1_pages_1_1_settle_page.html#a0281271bfc44a53ebce26c713986150f", null ],
     [ "ButtonDot", "class_cashier_app_1_1_pages_1_1_settle_page.html#a30864f55a6d5a2d22b24a6bba405d8dd", null ],
+    [ "ButtonEUROPayment", "class_cashier_app_1_1_pages_1_1_settle_page.html#a9ca2eb1369c9e3a09814faafaf7b078f", null ],
     [ "labelValue", "class_cashier_app_1_1_pages_1_1_settle_page.html#a5b2cf01136f8daca4ebb6bad50766677", null ],
     [ "reck", "class_cashier_app_1_1_pages_1_1_settle_page.html#a985a086962f34769832435fd5eab26ff", null ]
 ];

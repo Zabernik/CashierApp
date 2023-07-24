@@ -41,5 +41,6 @@
         <ToggleButton x:Name="ButtonCheckPrice" Content="Sprawdź Cene" Grid.Row="3" Checked="ButtonCheckPrice_Checked" Unchecked="ButtonCheckPrice_Unchecked" Grid.Column="3"/>
         <ToggleButton x:Name="ButtonCheckIngredients" Content="Sprawdź Skład" Grid.Row="3" Checked="ButtonCheckIngredients_Checked" Unchecked="ButtonCheckIngredients_Unchecked" Grid.Column="4"/>
         <Button x:Name="SettleButton" Content="Rozlicz" Click="SettleButton_Click" Grid.Row="3" Grid.Column="6" Background="#FFA9FB7C" FontWeight="Bold" FontSize="16"/>
+        <Label x:Name="CashierName" Grid.Column="5" Content="" HorizontalAlignment="Center" Height="31" Margin="0,30,0,0" Grid.Row="3" VerticalAlignment="Top" Width="207" FontSize="14"/>
     </Grid>
 </Window>

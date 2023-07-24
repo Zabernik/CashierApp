@@ -7,5 +7,6 @@ var dir_8bacef9733b46cb4d518afc1781d01db =
     [ "Pages", "dir_71e4dfd0a1ab52956474d2a528197601.html", "dir_71e4dfd0a1ab52956474d2a528197601" ],
     [ "App.xaml.cs", "_app_8xaml_8cs.html", "_app_8xaml_8cs" ],
     [ "AssemblyInfo.cs", "_assembly_info_8cs.html", null ],
+    [ "Login.xaml.cs", "_login_8xaml_8cs.html", "_login_8xaml_8cs" ],
     [ "MainWindow.xaml.cs", "_main_window_8xaml_8cs.html", "_main_window_8xaml_8cs" ]
 ];
