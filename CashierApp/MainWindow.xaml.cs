@@ -30,6 +30,7 @@ namespace CashierApp
             InitializeComponent();
             CheckBill();
             CashierName.Content = User.Name;
+            SwitchLanguage(Login.language);
         }
         /// <summary>Create new first of the open app Order</summary>
         Order order = new Order(1); //Instead of 1 there will be a data from db about id
@@ -188,6 +189,19 @@ namespace CashierApp
         {
             ButtonChange(Visibility.Visible);
             Main.Content = new Welcome();
+        }
+        public void SwitchLanguage(string langCode)
+        {
+            ResourceDictionary dictionary = new ResourceDictionary();
+            if (langCode == "pl")
+            {
+                dictionary.Source = new Uri("../Language\\StringRecources.pl.xaml", UriKind.Relative);
+            }
+            else
+            {
+                dictionary.Source = new Uri("../Language\\StringRecources.en.xaml", UriKind.Relative);
+            }
+            this.Resources.MergedDictionaries.Add(dictionary);
         }
     }
 }

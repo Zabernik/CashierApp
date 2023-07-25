@@ -1,7 +1,71 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:system="clr-namespace:System;assembly=mscorlib">
-    
+
+    <!-- LoginWindow -->
     <system:String x:Key="StrLabelHelpTipPIN">Admin PIN - 000000, Cashier 1 - 111111</system:String>
     <system:String x:Key="StrButtonChangeLanguage">Change Language To Polish</system:String>
     <system:String x:Key="StrButtonLogIn">LogIn</system:String>
+
+    <!-- MainWindow -->
+    <system:String x:Key="StrButtonSandwich">Sandwiches</system:String>
+    <system:String x:Key="StrButtonWraps">Wraps</system:String>
+    <system:String x:Key="StrButtonSalads">Salads</system:String>
+
+    <system:String x:Key="StrButtonExtras">Extras</system:String>
+    <system:String x:Key="StrButtonHotDrinks">Hot Drinks</system:String>
+    <system:String x:Key="StrButtonDrinks">Cold Drinks</system:String>
+
+    <system:String x:Key="StrButtonDeserts">Deserts</system:String>
+    <system:String x:Key="StrButtonVoid">Void</system:String>
+    <system:String x:Key="StrButtonCheckPrice">Check Price</system:String>
+
+    <system:String x:Key="StrButtonCheckIngredients">Check Ingredients</system:String>
+    <system:String x:Key="StrButtonSettleBill">Settle The Bill</system:String>
+    <system:String x:Key="StrButtonReturn">Return</system:String>
+
+    
+    <!-- SettlePage -->
+    <system:String x:Key="StrButtonCardPayment">Card</system:String>
+    <system:String x:Key="StrButtonCashPayment">Cash</system:String>
+    <system:String x:Key="StrButtonEUROPayment">EURO</system:String>
+
+    <system:String x:Key="StrButtonCashAllPayment">Every Penny</system:String>
+    <system:String x:Key="StrButtonClear">Clear</system:String>
+
+
+    <!-- WelcomePage -->
+
+
+    <!-- HotDrinksPage -->
+
+
+    <!-- DrinksPage -->
+
+
+    <!-- ExtrasPage -->
+    <system:String x:Key="StrButtonCheese">Cheese</system:String>
+    <system:String x:Key="StrButtonBacon">Bacon</system:String>
+    
+
+    <!-- DesertsPage -->
+
+
+    <!-- SaladsPage -->
+    <system:String x:Key="StrButtonPiccante">Piccante</system:String>
+
+    
+    <!-- SandwichesPage -->
+    <system:String x:Key="StrButtonCheesburger">Cheesburger</system:String>
+    <system:String x:Key="StrButtonCheesburgerSet">Cheesburger Set</system:String>
+    <system:String x:Key="StrButtonChickenBurger">Chicken Burger</system:String>
+
+    <system:String x:Key="StrButtonChickenBurgerSet">Chicken Burger Set</system:String>
+    <system:String x:Key="StrButtonChickenBurgerEnlargedSet">Chicken Burger EnlargedSet</system:String>
+
+    
+    <!-- WrapsPage -->
+    <system:String x:Key="StrButtonTortillaWithBacon">Tortilla with Bacon</system:String>
+    <system:String x:Key="StrButtonTortillaWithBaconSet">Tortilla with Bacon Set</system:String>
+    <system:String x:Key="StrButtonTortillaWithBaconEnlargedSet">Tortilla with Bacon EnlargedSet</system:String>
+
 </ResourceDictionary>

@@ -27,6 +27,7 @@ namespace CashierApp.Pages
         {
             InitializeComponent();
             labelValue.Content = reck.ToString();
+            SwitchLanguage(Login.language);
         }
 
         private void Button1Number_Click(object sender, RoutedEventArgs e)
@@ -164,6 +165,19 @@ namespace CashierApp.Pages
                 ClearMethod();
                 MessageBox.Show("Za mała kwota");
             }
+        }
+        private void SwitchLanguage(string langCode)
+        {
+            ResourceDictionary dictionary = new ResourceDictionary();
+            if (langCode == "pl")
+            {
+                dictionary.Source = new Uri("../Language\\StringRecources.pl.xaml", UriKind.Relative);
+            }
+            else
+            {
+                dictionary.Source = new Uri("../Language\\StringRecources.en.xaml", UriKind.Relative);
+            }
+            this.Resources.MergedDictionaries.Add(dictionary);
         }
     }
 }

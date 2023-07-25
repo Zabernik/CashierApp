@@ -21,9 +21,9 @@
             <RowDefinition Height="50*"/>
             <RowDefinition Height="160*"/>
         </Grid.RowDefinitions>
-        <Button x:Name="ButtonTortillaBacon" Content="Tortilla z bekonem" Click="ButtonTortillaBacon_Click" Grid.Column="0" Grid.Row="1"/>
-        <Button x:Name="ButtonTortillaBaconSet" Content="Tortilla z bekonem&#xD;&#xA;Zestaw" Click="ButtonTortillaBaconSet_Click" Grid.Column="1" Grid.Row="1"/>
-        <Button x:Name="ButtonTortillaBaconEnlargedSet" Content="Tortilla z bekonem&#xD;&#xA;Powiększony zestaw" Click="ButtonTortillaBaconEnlargedSet_Click" Grid.Column="2" Grid.Row="1"/>
+        <Button x:Name="ButtonTortillaBacon" Content="{DynamicResource StrButtonTortillaWithBacon}" Click="ButtonTortillaBacon_Click" Grid.Column="0" Grid.Row="1"/>
+        <Button x:Name="ButtonTortillaBaconSet" Content="{DynamicResource StrButtonTortillaWithBaconSet}" Click="ButtonTortillaBaconSet_Click" Grid.Column="1" Grid.Row="1"/>
+        <Button x:Name="ButtonTortillaBaconEnlargedSet" Content="{DynamicResource StrButtonTortillaWithBaconEnlargedSet}" Click="ButtonTortillaBaconEnlargedSet_Click" Grid.Column="2" Grid.Row="1"/>
 
     </Grid>
 </Page>

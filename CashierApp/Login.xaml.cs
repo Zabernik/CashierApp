@@ -26,7 +26,7 @@ namespace CashierApp
             InitializeComponent();
             SwitchLanguage(language);
         }
-        string language = "en";
+        public static string language = "en";
         private void LogInButton_Click(object sender, RoutedEventArgs e)
         {
             LogIn(PINBox.Password);
@@ -73,7 +73,7 @@ namespace CashierApp
             SwitchLanguage(language);
         }
 
-        private void SwitchLanguage(string langCode)
+        public void SwitchLanguage(string langCode)
         {
             ResourceDictionary dictionary = new ResourceDictionary();
             if (langCode == "pl")

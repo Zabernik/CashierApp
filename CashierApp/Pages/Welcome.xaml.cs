@@ -23,6 +23,20 @@ namespace CashierApp.Pages
         public Welcome()
         {
             InitializeComponent();
+            SwitchLanguage(Login.language);
+        }
+        private void SwitchLanguage(string langCode)
+        {
+            ResourceDictionary dictionary = new ResourceDictionary();
+            if (langCode == "pl")
+            {
+                dictionary.Source = new Uri("../Language\\StringRecources.pl.xaml", UriKind.Relative);
+            }
+            else
+            {
+                dictionary.Source = new Uri("../Language\\StringRecources.en.xaml", UriKind.Relative);
+            }
+            this.Resources.MergedDictionaries.Add(dictionary);
         }
     }
 }

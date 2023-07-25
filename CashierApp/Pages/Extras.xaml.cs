@@ -25,6 +25,7 @@ namespace CashierApp.Pages
         public Extras()
         {
             InitializeComponent();
+            SwitchLanguage(Login.language);
         }
 
         private void ButtonExtraChesse_Click(object sender, RoutedEventArgs e)
@@ -47,6 +48,19 @@ namespace CashierApp.Pages
             bacon.CheckProductIngredients();
             Order.AddExtra(bacon,index);
             ((MainWindow)Window.GetWindow(this)).CheckBill();
+        }
+        private void SwitchLanguage(string langCode)
+        {
+            ResourceDictionary dictionary = new ResourceDictionary();
+            if (langCode == "pl")
+            {
+                dictionary.Source = new Uri("../Language\\StringRecources.pl.xaml", UriKind.Relative);
+            }
+            else
+            {
+                dictionary.Source = new Uri("../Language\\StringRecources.en.xaml", UriKind.Relative);
+            }
+            this.Resources.MergedDictionaries.Add(dictionary);
         }
     }
 }
