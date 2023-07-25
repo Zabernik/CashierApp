@@ -13,6 +13,9 @@ namespace CashierApp.Classes
         public static string Name { get; set; }
         public static string CashierId { get; set; }
 
+        /// <summary>Gets the full name from DB by PIN.</summary>
+        /// <param name="PIN">The pin.</param>
+        /// <returns>Name + Surname Cashier</returns>
         public string GetName(string PIN)
         {
             string Name = default;
@@ -34,6 +37,9 @@ namespace CashierApp.Classes
             }
             return Name;
         }
+        /// <summary>Gets the identifier from DB by PIN.</summary>
+        /// <param name="PIN">The pin.</param>
+        /// <returns>ID Cashier</returns>
         public string GetID(string PIN)
         {
             string Data = default;

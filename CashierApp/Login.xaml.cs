@@ -24,8 +24,9 @@ namespace CashierApp
         public Login()
         {
             InitializeComponent();
+            SwitchLanguage(language);
         }
-
+        string language = "en";
         private void LogInButton_Click(object sender, RoutedEventArgs e)
         {
             LogIn(PINBox.Password);
@@ -57,6 +58,33 @@ namespace CashierApp
             User user = new User();
             User.Name = user.GetName(PIN);
             User.CashierId = user.GetID(PIN);
+        }
+
+        private void LanguageButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (language == "en")
+            {
+                language = "pl";
+            }
+            else
+            {
+                language = "en";
+            }
+            SwitchLanguage(language);
+        }
+
+        private void SwitchLanguage(string langCode)
+        {
+            ResourceDictionary dictionary = new ResourceDictionary();
+            if (langCode == "pl")
+            {
+                dictionary.Source = new Uri("../Language\\StringRecources.pl.xaml", UriKind.Relative);
+            }
+            else
+            {
+                dictionary.Source = new Uri("../Language\\StringRecources.en.xaml", UriKind.Relative);
+            }
+            this.Resources.MergedDictionaries.Add(dictionary);
         }
     }
 }
