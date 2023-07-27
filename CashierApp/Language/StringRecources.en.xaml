@@ -68,4 +68,7 @@
     <system:String x:Key="StrButtonTortillaWithBaconSet">Tortilla with Bacon Set</system:String>
     <system:String x:Key="StrButtonTortillaWithBaconEnlargedSet">Tortilla with Bacon EnlargedSet</system:String>
 
+
+    <!-- MultiUsing -->
+    <system:String x:Key="StrButtonLogOut">Log Out</system:String>
 </ResourceDictionary>

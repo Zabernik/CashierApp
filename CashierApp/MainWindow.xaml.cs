@@ -1,4 +1,5 @@
 ﻿using CashierApp.Classes;
+using CashierApp.Classes.DB;
 using CashierApp.Classes.Products;
 using CashierApp.Classes.Products.Burgers;
 using CashierApp.Classes.Products.Extras;
@@ -190,6 +191,8 @@ namespace CashierApp
             ButtonChange(Visibility.Visible);
             Main.Content = new Welcome();
         }
+        /// <summary>Switches the language of app;</summary>
+        /// <param name="langCode">The language code.</param>
         public void SwitchLanguage(string langCode)
         {
             ResourceDictionary dictionary = new ResourceDictionary();
@@ -202,6 +205,47 @@ namespace CashierApp
                 dictionary.Source = new Uri("../Language\\StringRecources.en.xaml", UriKind.Relative);
             }
             this.Resources.MergedDictionaries.Add(dictionary);
+        }
+        /// <summary>Deleting the last open order and close app, and open new login window.</summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
+        private void LogOutButton_Click(object sender, RoutedEventArgs e)
+        {
+            void logOut()
+            {
+                using (DataBaseContext conn = new DataBaseContext())
+                {
+                    var lastOrder = new Orders { Id = Order.Id };
+                    conn.Orders.Attach(lastOrder);
+                    conn.Orders.Remove(lastOrder);
+                    conn.SaveChanges();
+                }
+                Login login = new Login();
+                login.Show();
+                this.Close();
+            }
+            if (Order.OrderValue == 0)
+            {
+                logOut();
+            }
+            else
+            {
+                if (Login.language == "pl")
+                {
+                    if (MessageBox.Show("Czy chcesz anulować tą transakcje?", "", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+                    {
+                        logOut();
+                    }
+                }
+                else
+                {
+                    if (MessageBox.Show("Do you want to cancel this transaction?", "", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+                    {
+                        logOut();
+                    }
+                }
+                
+            }
         }
     }
 }

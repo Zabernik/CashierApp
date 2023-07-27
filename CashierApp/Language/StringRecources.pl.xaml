@@ -70,4 +70,9 @@
     <system:String x:Key="StrButtonTortillaWithBaconSet">Tortilla z Bekonem Zestaw</system:String>
     <system:String x:Key="StrButtonTortillaWithBaconEnlargedSet">Tortilla z Bekonem Powiększony Zestaw</system:String>
 
+    
+    <!-- MultiUsing -->
+    <system:String x:Key="StrButtonLogOut">Wyloguj</system:String>
+    
+    
 </ResourceDictionary>

@@ -17,30 +17,32 @@
             <ColumnDefinition Width="130*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="35*"/>
-            <RowDefinition Height="35*"/>
-            <RowDefinition Height="450*"/>
+            <RowDefinition Height="43*"/>
+            <RowDefinition Height="43*"/>
+            <RowDefinition Height="521*"/>
+            <RowDefinition Height="50*"/>
             <RowDefinition Height="50*"/>
         </Grid.RowDefinitions>
-        <ListBox x:Name="ListBoxOrder" Grid.Column="0" Grid.RowSpan="3" Background="#FFC3C3C3" FontSize="18"/>
-        <ListBox x:Name="ListBoxValue" Grid.RowSpan="3" Background="#FFC3C3C3" Grid.Column="1" FontSize="18"/>
-        <Label x:Name="LabelValue" Content="XX,XX PLN" FontWeight="Bold" Grid.Row="3" Background="#FFC3C3C3" Grid.ColumnSpan="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="23"/>
+        <ListBox x:Name="ListBoxOrder" Grid.Column="0" Grid.RowSpan="3" Background="#FFC3C3C3" FontSize="18" Grid.ColumnSpan="2" Margin="0,0,127,0"/>
+        <ListBox x:Name="ListBoxValue" Grid.RowSpan="3" Background="#FFC3C3C3" Grid.Column="1" FontSize="18" Grid.ColumnSpan="2" Margin="0,0,207,0"/>
+        <Label x:Name="LabelValue" Content="XX,XX PLN" FontWeight="Bold" Grid.Row="3" Background="#FFC3C3C3" Grid.ColumnSpan="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="23" Margin="0,0,207,0" Grid.RowSpan="2"/>
 
-        <Button x:Name="ButtonSandwich" Content="{DynamicResource StrButtonSandwich}" Click="ButtonSandwich_Click" Grid.Column="2" Grid.RowSpan="2"/>
-        <Button x:Name="ButtonWraps" Content="{DynamicResource StrButtonWraps}"  Click="ButtonWraps_Click" Grid.Column="3" Grid.RowSpan="2"/>
+        <Button x:Name="ButtonSandwich" Content="{DynamicResource StrButtonSandwich}" Click="ButtonSandwich_Click" Grid.Column="2" Grid.RowSpan="2" Grid.ColumnSpan="2" Margin="0,0,207,0"/>
+        <Button x:Name="ButtonWraps" Content="{DynamicResource StrButtonWraps}"  Click="ButtonWraps_Click" Grid.Column="3" Grid.RowSpan="2" Grid.ColumnSpan="2" Margin="0,0,206,0"/>
         <Button x:Name="ButtonSalads" Content="{DynamicResource StrButtonSalads}" Click="ButtonSalads_Click" Grid.Column="4" Grid.RowSpan="2"/>
-        <Button x:Name="ButtonExtras" Content="{DynamicResource StrButtonExtras}" Click="ButtonExtras_Click" Grid.Column="5" Grid.Row="0"/>
-        <Button x:Name="ButtonDrinks" Content="{DynamicResource StrButtonDrinks}" Grid.Column="5" Grid.Row="1" Click="ButtonDrinks_Click"/>
-        <Button x:Name="ButtonHotDrinks" Content="{DynamicResource StrButtonHotDrinks}" Grid.Column="6" Grid.Row="0" Click="ButtonHotDrinks_Click"/>
-        <Button x:Name="ButtonDeserts" Content="{DynamicResource StrButtonDeserts}" Grid.Column="6" Grid.Row="1" Click="ButtonDeserts_Click"/>
+        <Button x:Name="ButtonExtras" Content="{DynamicResource StrButtonExtras}" Click="ButtonExtras_Click" Grid.Column="4" Grid.Row="0" Grid.ColumnSpan="2" Margin="206,0,0,0"/>
+        <Button x:Name="ButtonDrinks" Content="{DynamicResource StrButtonDrinks}" Grid.Column="4" Grid.Row="1" Click="ButtonDrinks_Click" Grid.ColumnSpan="2" Margin="206,0,0,0"/>
+        <Button x:Name="ButtonHotDrinks" Content="{DynamicResource StrButtonHotDrinks}" Grid.Column="5" Grid.Row="0" Click="ButtonHotDrinks_Click" Grid.ColumnSpan="2" Margin="207,0,0,0"/>
+        <Button x:Name="ButtonDeserts" Content="{DynamicResource StrButtonDeserts}" Grid.Column="5" Grid.Row="1" Click="ButtonDeserts_Click" Grid.ColumnSpan="2" Margin="207,0,0,0"/>
 
-        <Frame x:Name="Main" NavigationUIVisibility="Hidden" Grid.Column="2" Grid.ColumnSpan="5" Grid.RowSpan="4"/>
+        <Frame x:Name="Main" NavigationUIVisibility="Hidden" Grid.Column="2" Grid.ColumnSpan="5" Grid.RowSpan="5"/>
 
         <Button x:Name="VoidButton" Content="{DynamicResource StrButtonVoid}" Click="VoidButton_Click" Grid.Row="3" Grid.Column="2"/>
         <Button x:Name="ExitButton" Visibility="Hidden" Content="{DynamicResource StrButtonReturn}" Click="ExitButton_Click" Grid.Row="3" Grid.Column="3"/>
+        <Button x:Name="LogOutButton" Content="{DynamicResource StrButtonLogOut}" Click="LogOutButton_Click" Grid.Row="4" Grid.Column="2"/>
         <ToggleButton x:Name="ButtonCheckPrice" Content="{DynamicResource StrButtonCheckPrice}" Grid.Row="3" Checked="ButtonCheckPrice_Checked" Unchecked="ButtonCheckPrice_Unchecked" Grid.Column="3"/>
         <ToggleButton x:Name="ButtonCheckIngredients" Content="{DynamicResource StrButtonCheckIngredients}" Grid.Row="3" Checked="ButtonCheckIngredients_Checked" Unchecked="ButtonCheckIngredients_Unchecked" Grid.Column="4"/>
-        <Button x:Name="SettleButton" Content="{DynamicResource StrButtonSettleBill}" Click="SettleButton_Click" Grid.Row="3" Grid.Column="6" Background="#FFA9FB7C" FontWeight="Bold" FontSize="16"/>
-        <Label x:Name="CashierName" Grid.Column="5" Content="" HorizontalAlignment="Center" Height="31" Margin="0,30,0,0" Grid.Row="3" VerticalAlignment="Top" Width="207" FontSize="14"/>
+        <Button x:Name="SettleButton" Content="{DynamicResource StrButtonSettleBill}" Click="SettleButton_Click" Grid.Row="3" Grid.Column="6" Grid.RowSpan="4"  Background="#FFA9FB7C" FontWeight="Bold" FontSize="16"/>
+        <Label x:Name="CashierName" Grid.Column="5" Content="" HorizontalAlignment="Center" Height="30" Grid.Row="3" VerticalAlignment="Top" Width="207" FontSize="14" Margin="0,30,0,0" Grid.RowSpan="2"/>
     </Grid>
 </Window>
