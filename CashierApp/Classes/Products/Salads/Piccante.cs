@@ -28,9 +28,17 @@ namespace CashierApp.Classes.Products.Salads
                 base.ProductID = IdProducts.Piccante;
             }
         }
-        public override string CheckIngredients()
+        public override string CheckIngredients(string langCode)
         {
-            return "Pierś z kurczaka, sałata lodowa, pomidor, ogórek, pestki dyni, ser żółty";
+            switch (langCode)
+            {
+                case "pl":
+                    return ("Pierś z kurczaka, sałata, pomidor, ogórek, pestki dyni, ser żółty");
+                case "en":
+                    return ("Chicken breast, lettuce, tomato, cucumber, pumpkin seeds and cheese");
+                default:
+                    return ("Chicken breast, lettuce, tomato, cucumber, pumpkin seeds and cheese");
+            }
         }
     }
 }

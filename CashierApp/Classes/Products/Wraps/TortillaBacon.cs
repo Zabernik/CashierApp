@@ -29,9 +29,17 @@ namespace CashierApp.Classes.Products.Wraps
                 base.ProductID = IdProducts.TortillaBacon;
             }
         }
-        public override string CheckIngredients()
+        public override string CheckIngredients(string langCode)
         {
-            return "Tortilla 11', majonez, sałata, pomidor, bekon, kurczak";
+            switch (langCode)
+            {
+                case "pl":
+                    return ("Tortilla 11', majonez, sałata, pomidor, bekon, kurczak");
+                case "en":
+                    return ("Tortilla 11', mayonnaise, lettuce, tomato, bacon and chicken");
+                default:
+                    return ("Tortilla 11', mayonnaise, lettuce, tomato, bacon and chicken");
+            }
         }
     }
 }

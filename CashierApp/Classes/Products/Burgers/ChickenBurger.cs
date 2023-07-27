@@ -29,9 +29,17 @@ namespace CashierApp.Classes.Products.Burgers
                 base.ProductID = IdProducts.ChickenBurger;
             }
         }
-        public override string CheckIngredients()
+        public override string CheckIngredients(string langCode)
         {
-            return "Bułka z ziarnami, majonez, sałata, mięso z kurczaka";
+            switch (langCode)
+            {
+                case "pl":
+                    return ("Bułka z ziarnami, majonez, sałata, mięso z kurczaka");
+                case "en":
+                    return ("Bun with grains, mayonnaise, lettuce and chicken meat");
+                default:
+                    return ("Bun with grains, mayonnaise, lettuce and chicken meat");
+            }
         }
     }
 }

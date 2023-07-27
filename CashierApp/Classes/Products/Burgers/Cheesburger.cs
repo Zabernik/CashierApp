@@ -28,9 +28,17 @@ namespace CashierApp.Classes.Products.Burgers
                 base.ProductID = IdProducts.Cheesburger;
             }
         }
-        public override string CheckIngredients()
+        public override string CheckIngredients(string langCode)
         {
-            return ("Bułka bez ziaren, musztarda, ketchup, 2szt pikli, ser, mięso wołowe");
+            switch (langCode)
+            {
+                case "pl":
+                    return ("Bułka bez ziaren, musztarda, ketchup, 2szt pikli, ser, mięso wołowe");
+                case "en":
+                    return ("Bun without seeds, mustard, ketchup, 2 pcs of pickles, cheese and beef");
+                default:
+                    return ("Bun without seeds, mustard, ketchup, 2 pcs of pickles, cheese and beef");
+            }
         }
     }
 }

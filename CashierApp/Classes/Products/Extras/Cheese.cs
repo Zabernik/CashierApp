@@ -12,10 +12,19 @@ namespace CashierApp.Classes.Products.Extras
     {
         public Cheese() : base("Ser", 1.00m, IdProducts.Cheese)
         {
+
         }
-        public override string CheckIngredients()
+        public override string CheckIngredients(string langCode)
         {
-            return "Plaster topionego sera";
+            switch (langCode)
+            {
+                case "pl":
+                    return ("Plaster topionego sera");
+                case "en":
+                    return ("A slice of melted cheese");
+                default:
+                    return ("A slice of melted cheese");
+            }
         }
     }
 }

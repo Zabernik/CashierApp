@@ -14,9 +14,17 @@ namespace CashierApp.Classes.Products.Extras
         { 
 
         }
-        public override string CheckIngredients()
+        public override string CheckIngredients(string langCode)
         {
-            return "Dwa pół plastry bekonu";
+            switch (langCode)
+            {
+                case "pl":
+                    return ("Dwa pół plastry bekonu");
+                case "en":
+                    return ("Two half slices of bacon");
+                default:
+                    return ("Two half slices of bacon");
+            }
         }
     }
 }

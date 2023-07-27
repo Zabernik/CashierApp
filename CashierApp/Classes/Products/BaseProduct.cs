@@ -125,12 +125,12 @@ namespace CashierApp.Classes.Products
             if (MainWindow.CheckIngredients is true)
             {
                 MessageBox.Show($"{this.ProductName} zawiera: \n" +
-                    $"{this.CheckIngredients()}");
+                    $"{this.CheckIngredients(Login.language)}");
             }
         }
         /// <summary>This return information about not implemented in Products data about ingredients</summary>
         /// <returns>"There isn't composition entered"</returns>
-        public virtual string CheckIngredients()
+        public virtual string CheckIngredients(string langCode)
         {
             return "Brak wprowadzonego składu";
         }
