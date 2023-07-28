@@ -71,4 +71,9 @@
 
     <!-- MultiUsing -->
     <system:String x:Key="StrButtonLogOut">Log Out</system:String>
+    <system:String x:Key="StrButtonManager">Manager</system:String>
+    <system:String x:Key="StrButtonAccept">Accept</system:String>
+
+    <system:String x:Key="StrButtonCancel">Cancel</system:String>
+
 </ResourceDictionary>

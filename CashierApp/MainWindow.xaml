@@ -40,6 +40,7 @@
         <Button x:Name="VoidButton" Content="{DynamicResource StrButtonVoid}" Click="VoidButton_Click" Grid.Row="3" Grid.Column="2"/>
         <Button x:Name="ExitButton" Visibility="Hidden" Content="{DynamicResource StrButtonReturn}" Click="ExitButton_Click" Grid.Row="3" Grid.Column="3"/>
         <Button x:Name="LogOutButton" Content="{DynamicResource StrButtonLogOut}" Click="LogOutButton_Click" Grid.Row="4" Grid.Column="2"/>
+        <Button x:Name="ManagerButton" Content="{DynamicResource StrButtonManager}" Click="ManagerButton_Click" Grid.Row="4" Grid.Column="3" Background="#FFFFCD91"/>
         <ToggleButton x:Name="ButtonCheckPrice" Content="{DynamicResource StrButtonCheckPrice}" Grid.Row="3" Checked="ButtonCheckPrice_Checked" Unchecked="ButtonCheckPrice_Unchecked" Grid.Column="3"/>
         <ToggleButton x:Name="ButtonCheckIngredients" Content="{DynamicResource StrButtonCheckIngredients}" Grid.Row="3" Checked="ButtonCheckIngredients_Checked" Unchecked="ButtonCheckIngredients_Unchecked" Grid.Column="4"/>
         <Button x:Name="SettleButton" Content="{DynamicResource StrButtonSettleBill}" Click="SettleButton_Click" Grid.Row="3" Grid.Column="6" Grid.RowSpan="4"  Background="#FFA9FB7C" FontWeight="Bold" FontSize="16"/>

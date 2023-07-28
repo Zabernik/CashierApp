@@ -29,6 +29,7 @@ namespace CashierApp.Classes.DB
         public string Name { get; set; }
         public string Surname { get; set; }
         public string PIN { get; set; }
+        public bool Authorization { get; set; }
     }
     public class CashierUpsell //There will be data about Upsell 
     {

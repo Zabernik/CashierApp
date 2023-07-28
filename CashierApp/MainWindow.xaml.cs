@@ -211,6 +211,7 @@ namespace CashierApp
         /// <param name="e">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
         private void LogOutButton_Click(object sender, RoutedEventArgs e)
         {
+
             void logOut()
             {
                 using (DataBaseContext conn = new DataBaseContext())
@@ -224,6 +225,7 @@ namespace CashierApp
                 login.Show();
                 this.Close();
             }
+
             if (Order.OrderValue == 0)
             {
                 logOut();
@@ -234,18 +236,53 @@ namespace CashierApp
                 {
                     if (MessageBox.Show("Czy chcesz anulować tą transakcje?", "", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
                     {
-                        logOut();
+                        if (User.Authorization(User.CashierId) == false)
+                        {
+                            AuthorizationWindow authorizationWindow = new AuthorizationWindow();
+                            authorizationWindow.ShowDialog();
+                            if (authorizationWindow.Authorization == true)
+                            {
+                                logOut();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Błąd autoryzacji");
+                            }
+                        }
+                        else
+                        {
+                            logOut();
+                        }
                     }
                 }
                 else
                 {
                     if (MessageBox.Show("Do you want to cancel this transaction?", "", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
                     {
-                        logOut();
+                        if (User.Authorization(User.CashierId) == false)
+                        {
+                            AuthorizationWindow authorizationWindow = new AuthorizationWindow();
+                            authorizationWindow.ShowDialog();
+                            if (authorizationWindow.Authorization == true)
+                            {
+                                logOut();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Authorization Error");
+                            }
+                        }
+                        else 
+                        { 
+                            logOut(); 
+                        }
                     }
-                }
-                
+                }              
             }
+        }
+        private void ManagerButton_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

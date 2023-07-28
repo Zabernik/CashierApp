@@ -59,6 +59,24 @@ namespace CashierApp.Classes
                 return Data;
             }
         }
-
+        public static bool Authorization(string cashierID)
+        {
+            bool auth = false;
+            using (DataBaseContext conn = new DataBaseContext())
+            {
+                var query = (from c in conn.Cashier
+                             where c.CashierId == cashierID
+                             select new
+                             {
+                                 c.Authorization
+                             }
+                             ).FirstOrDefault();
+                if (query != null)
+                {
+                    auth = query.Authorization;
+                }
+                return auth;
+            }
+        }
     }
 }
