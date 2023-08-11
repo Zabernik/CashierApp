@@ -100,21 +100,28 @@ namespace CashierApp
 
         private void ButtonAccept_Click(object sender, RoutedEventArgs e)
         {
-            using (DataBaseContext conn = new DataBaseContext())
+            try
             {
-                var query = (from c in conn.Cashier
-                             where c.PIN == PINAuthorization.Password
-                             select new
-                             {
-                                 c.Authorization
-                             }
-                             ).FirstOrDefault();
-                if (query != null)
+                using (DataBaseContext conn = new DataBaseContext())
                 {
-                    Authorization = query.Authorization;
+                    var query = (from c in conn.Cashier
+                                 where c.PIN == PINAuthorization.Password
+                                 select new
+                                 {
+                                     c.Authorization
+                                 }
+                                 ).FirstOrDefault();
+                    if (query != null)
+                    {
+                        Authorization = query.Authorization;
+                    }
                 }
+                this.Close();
             }
-            this.Close();
+            catch (Exception ex)
+            {
+                MessageBox.Show("Unable to connect with database, network error");
+            }
         }
 
         private void ButtonCancel_Click(object sender, RoutedEventArgs e)

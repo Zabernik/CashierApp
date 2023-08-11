@@ -35,20 +35,27 @@ namespace CashierApp
         /// <param name="PIN">The pin.</param>
         private void LogIn(string PIN)
         {
-            using (DataBaseContext conn = new DataBaseContext())
+            try
             {
-                if (conn.Cashier.Any(cashierExist => cashierExist.PIN == PIN))
+                using (DataBaseContext conn = new DataBaseContext())
                 {
-                    DownloadDataCashier(PIN);
-                    MainWindow main = new MainWindow();
-                    main.Show();
-                    Application.Current.MainWindow = main;
-                    this.Close();
+                    if (conn.Cashier.Any(cashierExist => cashierExist.PIN == PIN))
+                    {
+                        DownloadDataCashier(PIN);
+                        MainWindow main = new MainWindow();
+                        main.Show();
+                        Application.Current.MainWindow = main;
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Nie poprawny PIN kasjera");
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("Nie poprawny PIN kasjera");
-                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Unable to connect with database, network error");
             }
         }
         /// <summary>Downloads the data about cashier.</summary>

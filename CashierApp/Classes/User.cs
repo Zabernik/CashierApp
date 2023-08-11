@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace CashierApp.Classes
 {
@@ -19,21 +20,28 @@ namespace CashierApp.Classes
         public string GetName(string PIN)
         {
             string Name = default;
-            using (DataBaseContext ctx = new DataBaseContext())
+            try
             {
-                var query = (from c in ctx.Cashier
-                              where c.PIN == PIN
-                              select new
-                              {
-                                  c.Name ,
-                                  c.Surname,
-                              }
-                             ).FirstOrDefault();
-
-                if (query != null)
+                using (DataBaseContext ctx = new DataBaseContext())
                 {
-                    Name = query.Name + " " + query.Surname;
+                    var query = (from c in ctx.Cashier
+                                 where c.PIN == PIN
+                                 select new
+                                 {
+                                     c.Name,
+                                     c.Surname,
+                                 }
+                                 ).FirstOrDefault();
+
+                    if (query != null)
+                    {
+                        Name = query.Name + " " + query.Surname;
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Unable to connect with database, network error");
             }
             return Name;
         }
@@ -43,40 +51,56 @@ namespace CashierApp.Classes
         public string GetID(string PIN)
         {
             string Data = default;
-            using (DataBaseContext ctx = new DataBaseContext())
+            try
             {
-                var query = (from c in ctx.Cashier
-                             where c.PIN == PIN
-                             select new
-                             {
-                                 c.CashierId
-                             }
-                             ).FirstOrDefault();
-                if (query != null)
+                using (DataBaseContext ctx = new DataBaseContext())
                 {
-                    Data = query.CashierId;
+                    var query = (from c in ctx.Cashier
+                                 where c.PIN == PIN
+                                 select new
+                                 {
+                                     c.CashierId
+                                 }
+                                 ).FirstOrDefault();
+                    if (query != null)
+                    {
+                        Data = query.CashierId;
+                    }
+
                 }
-                return Data;
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Unable to connect with database, network error");
+            }                    
+            return Data;
         }
         public static bool Authorization(string cashierID)
         {
             bool auth = false;
-            using (DataBaseContext conn = new DataBaseContext())
+            try
             {
-                var query = (from c in conn.Cashier
-                             where c.CashierId == cashierID
-                             select new
-                             {
-                                 c.Authorization
-                             }
-                             ).FirstOrDefault();
-                if (query != null)
+                using (DataBaseContext conn = new DataBaseContext())
                 {
-                    auth = query.Authorization;
+                    var query = (from c in conn.Cashier
+                                 where c.CashierId == cashierID
+                                 select new
+                                 {
+                                     c.Authorization
+                                 }
+                                 ).FirstOrDefault();
+                    if (query != null)
+                    {
+                        auth = query.Authorization;
+                    }
+                    
                 }
-                return auth;
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Unable to connect with database, network error");
+            }
+            return auth;
         }
     }
 }

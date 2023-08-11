@@ -12,7 +12,8 @@ namespace CashierApp.Classes.DB
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite("Data Source = CashierApp.db");
+            string connectionString = Environment.GetEnvironmentVariable("CONNECTION_STRING", EnvironmentVariableTarget.User);
+            optionsBuilder.UseMySql(connectionString,new MySqlServerVersion(new Version(8, 0, 21)));
         }
 
         public DbSet<Orders> Orders { get; set; }

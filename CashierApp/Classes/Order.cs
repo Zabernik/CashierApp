@@ -112,16 +112,23 @@ namespace CashierApp.Classes
         /// <param name="id">The identifier new order</param>
         private void TransferDataID(int id)//Transfer ID to db
         {
-            using (DataBaseContext conn = new DataBaseContext())
+            try
             {
-                while (conn.Orders.Any(idExist => idExist.Id == id))
+                using (DataBaseContext conn = new DataBaseContext())
                 {
-                    id += 1;
-                    Id = id;
+                    while (conn.Orders.Any(idExist => idExist.Id == id))
+                    {
+                        id += 1;
+                        Id = id;
+                    }
+                    Orders newOrder = new Orders { Id = id, IsFinished = false, DataOfOrder = DateTime.Now };
+                    conn.Add<Orders>(newOrder);
+                    conn.SaveChanges();
                 }
-                Orders newOrder = new Orders {Id = id, IsFinished = false, DataOfOrder = DateTime.Now };
-                conn.Add<Orders>(newOrder);
-                conn.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Unable to connect with database, network error");
             }
         }
     }

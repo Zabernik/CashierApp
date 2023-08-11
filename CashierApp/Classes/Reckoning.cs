@@ -122,17 +122,24 @@ namespace CashierApp.Classes
         /// <param name="rest">The rest.</param>
         private void TransferDataPayment(string payment, decimal value, decimal rest = 0)
         {
-            using(DataBaseContext conn = new DataBaseContext()) 
+            try
             {
-                var order = conn.Orders.SingleOrDefault(x => x.Id == Order.Id);
-                if (order != null) 
-                { 
-                    order.OrderValue = value;
-                    order.Rest = rest;
-                    order.PaymentMethod = payment;
-                    order.IsFinished = true;
-                    conn.SaveChanges();
+                using (DataBaseContext conn = new DataBaseContext())
+                {
+                    var order = conn.Orders.SingleOrDefault(x => x.Id == Order.Id);
+                    if (order != null)
+                    {
+                        order.OrderValue = value;
+                        order.Rest = rest;
+                        order.PaymentMethod = payment;
+                        order.IsFinished = true;
+                        conn.SaveChanges();
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Unable to connect with database, network error");
             }
         }
     }
