@@ -5,22 +5,38 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CashierApp"
         mc:Ignorable="d"
-        Title="AuthorizationWindow" Height="415" Width="300" ResizeMode="NoResize">
-    <Grid Height="400" Width="300">
-        <PasswordBox x:Name="PINAuthorization" HorizontalAlignment="Center" Height="48" Margin="0,20,0,0" VerticalAlignment="Top" Width="252" FontSize="18" FontWeight="Bold"/>
-        <Button x:Name="ButtonClear" Content="{DynamicResource StrButtonClear}" Click="ButtonClear_Click" Margin="192,232,24,97"/>
-        <Button x:Name="Button0Number" Content="0" Click="Button0Number_Click" Margin="24,232,108,97"/>
-        <Button x:Name="Button1Number" Content="1" Click="Button1Number_Click" Margin="24,179,192,168"/>
-        <Button x:Name="Button2Number" Content="2" Click="Button2Number_Click" Margin="108,179,108,168"/>
-        <Button x:Name="Button3Number" Content="3" Click="Button3Number_Click" Margin="192,179,24,168"/>
-        <Button x:Name="Button4Number" Content="4" Click="Button4Number_Click" Margin="24,126,192,221"/>
-        <Button x:Name="Button5Number" Content="5" Click="Button5Number_Click" Margin="108,126,108,221"/>
-        <Button x:Name="Button6Number" Content="6" Click="Button6Number_Click" Margin="192,126,24,221"/>
-        <Button x:Name="Button7Number" Content="7" Click="Button7Number_Click" Margin="24,73,192,274"/>
-        <Button x:Name="Button8Number" Content="8" Click="Button8Number_Click" Margin="108,73,108,274"/>
-        <Button x:Name="Button9Number" Content="9" Click="Button9Number_Click" Margin="192,73,24,274"/>
-        <Button x:Name="ButtonAccept" Content="{DynamicResource StrButtonAccept}" Click="ButtonAccept_Click" Margin="24,320,108,27" Background="#FFC8F57C" FontSize="15" FontWeight="Bold"/>
-        <Button x:Name="ButtonCancel" Content="{DynamicResource StrButtonCancel}" Click="ButtonCancel_Click" Margin="192,320,24,27" Background="#FFFF8888" FontWeight="Bold" FontSize="15"/>
-
+        Title="AuthorizationWindow" Height="500" Width="400" ResizeMode="NoResize" WindowStyle="None" WindowStartupLocation="CenterScreen" BorderThickness="6" BorderBrush="#FF460000">
+    <Grid Background="#FF09096B">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="25*"/>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="25*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="60*"/>
+            <RowDefinition Height="15*"/>
+        </Grid.RowDefinitions>
+        <PasswordBox x:Name="PINAuthorization" FontSize="18" FontWeight="Bold" Background="#FFAAAAE4" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3"/>
+        <Button x:Name="ButtonClear" Content="{DynamicResource StrButtonClear}" Click="ButtonClear_Click" Grid.Row="5" Grid.Column="3"/>
+        <Button x:Name="Button0Number" Content="0" Click="Button0Number_Click" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <Button x:Name="Button1Number" Content="1" Click="Button1Number_Click" Grid.Row="4" Grid.Column="1"/>
+        <Button x:Name="Button2Number" Content="2" Click="Button2Number_Click" Grid.Row="4" Grid.Column="2"/>
+        <Button x:Name="Button3Number" Content="3" Click="Button3Number_Click" Grid.Row="4" Grid.Column="3"/>
+        <Button x:Name="Button4Number" Content="4" Click="Button4Number_Click" Grid.Row="3" Grid.Column="1"/>
+        <Button x:Name="Button5Number" Content="5" Click="Button5Number_Click" Grid.Row="3" Grid.Column="2"/>
+        <Button x:Name="Button6Number" Content="6" Click="Button6Number_Click" Grid.Row="3" Grid.Column="3"/>
+        <Button x:Name="Button7Number" Content="7" Click="Button7Number_Click" Grid.Row="2" Grid.Column="1"/>
+        <Button x:Name="Button8Number" Content="8" Click="Button8Number_Click" Grid.Row="2" Grid.Column="2"/>
+        <Button x:Name="Button9Number" Content="9" Click="Button9Number_Click" Grid.Row="2" Grid.Column="3"/>
+        <Button x:Name="ButtonAccept" Content="{DynamicResource StrButtonAccept}" Click="ButtonAccept_Click" Background="#FFC8F57C" FontSize="15" FontWeight="Bold" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <Button x:Name="ButtonCancel" Content="{DynamicResource StrButtonCancel}" Click="ButtonCancel_Click" Background="#FFFF8888" FontWeight="Bold" FontSize="15" Grid.Row="6" Grid.Column="3"/>
     </Grid>
 </Window>

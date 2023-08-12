@@ -21,8 +21,8 @@
             <RowDefinition Height="50*"/>
             <RowDefinition Height="160*"/>
         </Grid.RowDefinitions>
-        <Button x:Name="ButtonExtraChesse" Content="{DynamicResource StrButtonCheese}" Click="ButtonExtraChesse_Click" Grid.Column="1" Grid.Row="1"/>
-        <Button x:Name="ButtonExtraBacon" Content="{DynamicResource StrButtonBacon}" Click="ButtonExtraBacon_Click" Grid.Column="0" Grid.Row="1"/>
+        <Button x:Name="ButtonExtraChesse" Content="{DynamicResource StrButtonCheese}" Click="ButtonExtraChesse_Click" Grid.Column="1" Grid.Row="1" Background="#FF7644C7"/>
+        <Button x:Name="ButtonExtraBacon" Content="{DynamicResource StrButtonBacon}" Click="ButtonExtraBacon_Click" Grid.Column="0" Grid.Row="1" Background="#FF7644C7"/>
 
     </Grid>
 </Page>

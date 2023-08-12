@@ -67,17 +67,17 @@ namespace CashierApp
             {
                 if ((int)product > 500)
                 {
-                    ListBoxOrder.Items.Add(new ListBoxItem { Content = $"- - - -> {product}", Foreground = Brushes.Green });
+                    ListBoxOrder.Items.Add(new ListBoxItem { Content = $"- - - -> {product}", Foreground = Brushes.Red, Background = (Brush)(new BrushConverter().ConvertFrom("#aaaae4"))});
                 }
                 else
                 {
-                    ListBoxOrder.Items.Add($"{product}");
+                    ListBoxOrder.Items.Add(new ListBoxItem { Content = product, Foreground = Brushes.White, Background = (Brush)(new BrushConverter().ConvertFrom("#aaaae4"))});
                 }
             }
             ListBoxValue.Items.Clear();
             foreach (var productPrice in Order.PriceProducts)
             {
-                ListBoxValue.Items.Add($"{productPrice}");
+                ListBoxValue.Items.Add(new ListBoxItem { Content = productPrice, Foreground = Brushes.White, Background = (Brush)(new BrushConverter().ConvertFrom("#aaaae4"))});
             }
             LabelValue.Content = $"{Order.OrderValue} PLN";
         }

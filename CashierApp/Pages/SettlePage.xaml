@@ -27,25 +27,25 @@
             <RowDefinition Height="40*"/>
             <RowDefinition Height="50*"/>
         </Grid.RowDefinitions>
-        <Button x:Name="ButtonCardPayment" Content="{DynamicResource StrButtonCardPayment}" Grid.Column="0" Grid.Row="0" Click="ButtonCardPayment_Click"/>
-        <Button x:Name="ButtonCashPayment" Content="{DynamicResource StrButtonCashPayment}" Grid.Column="1" Grid.Row="3" Click="ButtonCashPayment_Click"/>
-        <Button x:Name="ButtonEUROPayment" Content="{DynamicResource StrButtonEUROPayment}" Grid.Column="1" Grid.Row="2" Click="ButtonEUROPayment_Click" />
-        <Button x:Name="ButtonCashAllPayment" Content="{DynamicResource StrButtonCashAllPayment}" Grid.Column="1" Grid.Row="4" Click="ButtonCashAllPayment_Click"/>
-        <Button x:Name="ButtonClear" Content="{DynamicResource StrButtonClear}" Grid.Column="4" Grid.Row="5" Click="ButtonClear_Click"/>
+        <Button x:Name="ButtonCardPayment" Content="{DynamicResource StrButtonCardPayment}" Grid.Column="0" Grid.Row="0" Click="ButtonCardPayment_Click" Background="#FF4370C1"/>
+        <Button x:Name="ButtonCashPayment" Content="{DynamicResource StrButtonCashPayment}" Grid.Column="1" Grid.Row="3" Click="ButtonCashPayment_Click" Background="#FF4370C1"/>
+        <Button x:Name="ButtonEUROPayment" Content="{DynamicResource StrButtonEUROPayment}" Grid.Column="1" Grid.Row="2" Click="ButtonEUROPayment_Click" Background="#FF4370C1" />
+        <Button x:Name="ButtonCashAllPayment" Content="{DynamicResource StrButtonCashAllPayment}" Grid.Column="1" Grid.Row="4" Click="ButtonCashAllPayment_Click" Background="#FF4370C1"/>
+        <Button x:Name="ButtonClear" Content="{DynamicResource StrButtonClear}" Grid.Column="4" Grid.Row="5" Click="ButtonClear_Click" Background="#FFC61F00"/>
 
-        <Label x:Name="labelValue" Content="XX,XX PLN" FontWeight="Bold" Grid.Row="1" Background="#FFC3C3C3" Grid.Column="2" Grid.ColumnSpan="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="23"/>
+        <Label x:Name="labelValue" Content="XX,XX PLN" FontWeight="Bold" Grid.Row="1" Background="#FFB4E6C9" Grid.Column="2" Grid.ColumnSpan="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="23"/>
 
-        <Button x:Name="ButtonDot" Content="," Grid.Column="2" Grid.Row="5" Click="ButtonDot_Click"/>
-        <Button x:Name="Button0Number" Content="0" Grid.Column="3" Grid.Row="5" Click="Button0Number_Click"/>
-        <Button x:Name="Button1Number" Content="1" Grid.Column="2" Grid.Row="4" Click="Button1Number_Click"/>
-        <Button x:Name="Button2Number" Content="2" Grid.Column="3" Grid.Row="4" Click="Button2Number_Click"/>
-        <Button x:Name="Button3Number" Content="3" Grid.Column="4" Grid.Row="4" Click="Button3Number_Click"/>
-        <Button x:Name="Button4Number" Content="4" Grid.Column="2" Grid.Row="3" Click="Button4Number_Click"/>
-        <Button x:Name="Button5Number" Content="5" Grid.Column="3" Grid.Row="3" Click="Button5Number_Click"/>
-        <Button x:Name="Button6Number" Content="6" Grid.Column="4" Grid.Row="3" Click="Button6Number_Click"/>
-        <Button x:Name="Button7Number" Content="7" Grid.Column="2" Grid.Row="2" Click="Button7Number_Click"/>
-        <Button x:Name="Button8Number" Content="8" Grid.Column="3" Grid.Row="2" Click="Button8Number_Click"/>
-        <Button x:Name="Button9Number" Content="9" Grid.Column="4" Grid.Row="2" Click="Button9Number_Click"/>
-        
+        <Button x:Name="ButtonDot" Content="," Grid.Column="2" Grid.Row="5" Click="ButtonDot_Click" Background="#FFEAE2A4"/>
+        <Button x:Name="Button0Number" Content="0" Grid.Column="3" Grid.Row="5" Click="Button0Number_Click" Background="#FFEAE2A4"/>
+        <Button x:Name="Button1Number" Content="1" Grid.Column="2" Grid.Row="4" Click="Button1Number_Click" Background="#FFEAE2A4"/>
+        <Button x:Name="Button2Number" Content="2" Grid.Column="3" Grid.Row="4" Click="Button2Number_Click" Background="#FFEAE2A4"/>
+        <Button x:Name="Button3Number" Content="3" Grid.Column="4" Grid.Row="4" Click="Button3Number_Click" Background="#FFEAE2A4"/>
+        <Button x:Name="Button4Number" Content="4" Grid.Column="2" Grid.Row="3" Click="Button4Number_Click" Background="#FFEAE2A4"/>
+        <Button x:Name="Button5Number" Content="5" Grid.Column="3" Grid.Row="3" Click="Button5Number_Click" Background="#FFEAE2A4"/>
+        <Button x:Name="Button6Number" Content="6" Grid.Column="4" Grid.Row="3" Click="Button6Number_Click" Background="#FFEAE2A4"/>
+        <Button x:Name="Button7Number" Content="7" Grid.Column="2" Grid.Row="2" Click="Button7Number_Click" Background="#FFEAE2A4"/>
+        <Button x:Name="Button8Number" Content="8" Grid.Column="3" Grid.Row="2" Click="Button8Number_Click" Background="#FFEAE2A4"/>
+        <Button x:Name="Button9Number" Content="9" Grid.Column="4" Grid.Row="2" Click="Button9Number_Click" Background="#FFEAE2A4"/>
+
     </Grid>
 </Page>

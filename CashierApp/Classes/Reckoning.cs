@@ -104,7 +104,7 @@ namespace CashierApp.Classes
         {
 
             MessageBox.Show($"Print Bill... \n" +
-                            $"Cashier - \n" +
+                            $"Cashier - {User.Name}\n" +
                             $"Value - {this.ValueText}\n" +
                             $"Currency - {this.Currency}\n" +
                             $"Rest - {this.Rest}\n");
