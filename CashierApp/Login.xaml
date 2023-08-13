@@ -7,23 +7,39 @@
         mc:Ignorable="d"
         Title="LogIn" WindowState="Maximized" WindowStyle="None" ResizeMode="NoResize" Background="#FF04042B">
     <Grid Height="700" Width="1400" Background="#FF04042B">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60*"/>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="60*"/>
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="699*"/>
-            <ColumnDefinition Width="701*"/>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="40*"/>
+            <ColumnDefinition Width="40*"/>
+            <ColumnDefinition Width="40*"/>
+            <ColumnDefinition Width="110*"/>
+            <ColumnDefinition Width="110*"/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="LogInButton" Content="{DynamicResource StrButtonLogIn}" Click="LogInButton_Click" Margin="596,394,596,244" Grid.ColumnSpan="2" FontSize="18" FontWeight="Bold" Background="#FF593690"/>
-        <PasswordBox x:Name="PINBox" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="58" Margin="596,242,0,0" VerticalAlignment="Top" Width="208" FontSize="20" FontWeight="Bold" MaxLength="6" Background="#FFAAAAE4"/>
-        <Label Content="{DynamicResource StrLabelHelpTipPIN}" HorizontalAlignment="Left" Height="59" Margin="52,46,0,0" VerticalAlignment="Top" Width="568" FontSize="18" RenderTransformOrigin="0.5,0.5" Foreground="White">
-            <Label.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform AngleX="0.617"/>
-                    <RotateTransform/>
-                    <TranslateTransform X="0.635"/>
-                </TransformGroup>
-            </Label.RenderTransform>
-        </Label>
-        <Button x:Name="LanguageButton" Content="{DynamicResource StrButtonChangeLanguage}" Click="LanguageButton_Click" Margin="46,532,375,32" FontSize="15" FontWeight="Bold" Background="#FF444584"/>
+
+        <Button x:Name="ButtonClear" Content="{DynamicResource StrButtonClear}" Click="ButtonClear_Click" Grid.Row="4" Grid.Column="3"/>
+        <Button x:Name="Button0Number" Content="0" Click="Button0Number_Click" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <Button x:Name="Button1Number" Content="1" Click="Button1Number_Click" Grid.Row="3" Grid.Column="1"/>
+        <Button x:Name="Button2Number" Content="2" Click="Button2Number_Click" Grid.Row="3" Grid.Column="2"/>
+        <Button x:Name="Button3Number" Content="3" Click="Button3Number_Click" Grid.Row="3" Grid.Column="3"/>
+        <Button x:Name="Button4Number" Content="4" Click="Button4Number_Click" Grid.Row="2" Grid.Column="1"/>
+        <Button x:Name="Button5Number" Content="5" Click="Button5Number_Click" Grid.Row="2" Grid.Column="2"/>
+        <Button x:Name="Button6Number" Content="6" Click="Button6Number_Click" Grid.Row="2" Grid.Column="3"/>
+        <Button x:Name="Button7Number" Content="7" Click="Button7Number_Click" Grid.Row="1" Grid.Column="1"/>
+        <Button x:Name="Button8Number" Content="8" Click="Button8Number_Click" Grid.Row="1" Grid.Column="2"/>
+        <Button x:Name="Button9Number" Content="9" Click="Button9Number_Click" Grid.Row="1" Grid.Column="3"/>
+
+        <Button x:Name="LogInButton" Content="{DynamicResource StrButtonLogIn}" Click="LogInButton_Click" Margin="246,73,243,50" FontSize="18" FontWeight="Bold" Background="#FF593690" Grid.Column="4" Grid.Row="3" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+        <PasswordBox x:Name="PINBox" HorizontalAlignment="Left" Height="80" Margin="233,0,0,0" VerticalAlignment="Top" Width="327" FontSize="20" FontWeight="Bold" MaxLength="6" Background="#FFAAAAE4" Grid.Column="4" Grid.Row="2" Grid.ColumnSpan="2"/>
+        <Label Content="{DynamicResource StrLabelHelpTipPIN}" HorizontalAlignment="Left" Height="59" Margin="56,27,0,0" VerticalAlignment="Top" Width="568" FontSize="18" RenderTransformOrigin="0.5,0.5" Foreground="White" Grid.ColumnSpan="5"/>
+        <Button x:Name="LanguageButton" Content="{DynamicResource StrButtonChangeLanguage}" Click="LanguageButton_Click" Margin="140,10,10,34" FontSize="15" FontWeight="Bold" Background="#FF444584" Grid.Column="5"/>
 
     </Grid>
 </Window>

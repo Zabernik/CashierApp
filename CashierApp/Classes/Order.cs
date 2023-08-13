@@ -30,10 +30,17 @@ namespace CashierApp.Classes
         /// <param name="id">The identifier.</param>
         public Order(int id)
         {
+            if (id == 1)
+            {
+                TransferDataID(id);
+            }
+            else
+            {
+                Id = id;
+            }
             Products = new List<IdProducts>();
             PriceProducts = new List<decimal>();
-            Id = id;
-            TransferDataID(id);
+
         }
 
         /// <summary>Converts to string.</summary>
@@ -121,7 +128,7 @@ namespace CashierApp.Classes
                         id += 1;
                         Id = id;
                     }
-                    Orders newOrder = new Orders { Id = id, IsFinished = false, DataOfOrder = DateTime.Now };
+                    Orders newOrder = new Orders { Id = id, IsFinished = false, DataOfOrder = DateTime.Now, CashierName = User.Name, CashierID = User.CashierId };
                     conn.Add<Orders>(newOrder);
                     conn.SaveChanges();
                 }

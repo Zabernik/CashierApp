@@ -29,12 +29,13 @@ namespace CashierApp
         public MainWindow()
         {
             InitializeComponent();
+            CheckLastTr();
             CheckBill();
             CashierName.Content = User.Name;
             SwitchLanguage(Login.language);
         }
         /// <summary>Create new first of the open app Order</summary>
-        Order order = new Order(1); //Instead of 1 there will be a data from db about id
+        //Order order = new Order(1);
         /// <summary>Gets or sets a value indicating whether toggle button of CheckPrice
         /// is ON</summary>
         /// <value>
@@ -46,11 +47,41 @@ namespace CashierApp
         public static bool CheckIngredients { get; set; } = false;
         /// <summary>That method is using when last transaction is full payment. Create new Order, set value of labels to 0/null</summary>
         /// <param name="statusTr">if set to <c>true</c> that's mean last transaction was full paid</param>
+        private void CheckLastTr()
+        {
+            try
+            {
+                using (DataBaseContext conn = new DataBaseContext())
+                {
+                    var query = (from c in conn.Orders
+                                 where c.IsFinished == false && c.CashierID == User.CashierId
+                                 orderby c.Id
+                                 select new
+                                 {
+                                     c.Id
+                                 }
+                                 ).LastOrDefault();
+                    if (query != null)
+                    {
+                        Order order = new Order(query.Id);
+                    }
+                    else
+                    {
+                        Order order = new Order(1);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Unable to connect with database, network error(CheckLastTr)");
+                MessageBox.Show(ex.Message);
+            }
+        }
         public void newTr(bool statusTr)
         {
             if (statusTr == true)
             {
-                order = new Order(2); //Instead of 2 there will be a data from db about id
+                Order order = new Order(1);
                 Order.OrderValue = 0;
                 Order.Products.Clear();
                 Order.PriceProducts.Clear();
@@ -63,21 +94,24 @@ namespace CashierApp
         public void CheckBill()
         {
             ListBoxOrder.Items.Clear();
-            foreach (var product in Order.Products)
+            if (Order.Products is not null)
             {
-                if ((int)product > 500)
+                foreach (var product in Order.Products)
                 {
-                    ListBoxOrder.Items.Add(new ListBoxItem { Content = $"- - - -> {product}", Foreground = Brushes.Red, Background = (Brush)(new BrushConverter().ConvertFrom("#aaaae4"))});
+                    if ((int)product > 500)
+                    {
+                        ListBoxOrder.Items.Add(new ListBoxItem { Content = $"- - - -> {product}", Foreground = Brushes.Red, Background = (Brush)(new BrushConverter().ConvertFrom("#aaaae4")) });
+                    }
+                    else
+                    {
+                        ListBoxOrder.Items.Add(new ListBoxItem { Content = product, Foreground = Brushes.White, Background = (Brush)(new BrushConverter().ConvertFrom("#aaaae4")) });
+                    }
                 }
-                else
+                ListBoxValue.Items.Clear();
+                foreach (var productPrice in Order.PriceProducts)
                 {
-                    ListBoxOrder.Items.Add(new ListBoxItem { Content = product, Foreground = Brushes.White, Background = (Brush)(new BrushConverter().ConvertFrom("#aaaae4"))});
+                    ListBoxValue.Items.Add(new ListBoxItem { Content = productPrice, Foreground = Brushes.White, Background = (Brush)(new BrushConverter().ConvertFrom("#aaaae4")) });
                 }
-            }
-            ListBoxValue.Items.Clear();
-            foreach (var productPrice in Order.PriceProducts)
-            {
-                ListBoxValue.Items.Add(new ListBoxItem { Content = productPrice, Foreground = Brushes.White, Background = (Brush)(new BrushConverter().ConvertFrom("#aaaae4"))});
             }
             LabelValue.Content = $"{Order.OrderValue} PLN";
         }

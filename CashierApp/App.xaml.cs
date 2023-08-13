@@ -41,6 +41,12 @@ namespace CashierApp
                         conn.Add<Cashier>(cashier01);
                         conn.SaveChanges();
                     }
+                    if (!conn.Orders.Any(firstOrderExist => firstOrderExist.Id == 1))
+                    {
+                        Orders order = new Orders { Id = 1, CashierName = "Admin Admin", CashierID = "0000", DataOfOrder = DateTime.Now, IsFinished = true };
+                        conn.Add<Orders>(order);
+                        conn.SaveChanges();
+                    }
                 }
                 catch (Exception ex)
                 {

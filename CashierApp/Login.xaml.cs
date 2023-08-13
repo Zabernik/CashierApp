@@ -93,5 +93,74 @@ namespace CashierApp
             }
             this.Resources.MergedDictionaries.Add(dictionary);
         }
+        private void Button1Number_Click(object sender, RoutedEventArgs e)
+        {
+            ButtonMethod("1");
+        }
+
+        private void Button2Number_Click(object sender, RoutedEventArgs e)
+        {
+            ButtonMethod("2");
+        }
+
+        private void Button3Number_Click(object sender, RoutedEventArgs e)
+        {
+            ButtonMethod("3");
+        }
+
+        private void Button4Number_Click(object sender, RoutedEventArgs e)
+        {
+            ButtonMethod("4");
+        }
+
+        private void Button5Number_Click(object sender, RoutedEventArgs e)
+        {
+            ButtonMethod("5");
+        }
+
+        private void Button6Number_Click(object sender, RoutedEventArgs e)
+        {
+            ButtonMethod("6");
+        }
+
+        private void Button7Number_Click(object sender, RoutedEventArgs e)
+        {
+            ButtonMethod("7");
+        }
+
+        private void Button8Number_Click(object sender, RoutedEventArgs e)
+        {
+            ButtonMethod("8");
+        }
+
+        private void Button9Number_Click(object sender, RoutedEventArgs e)
+        {
+            ButtonMethod("9");
+        }
+
+        private void Button0Number_Click(object sender, RoutedEventArgs e)
+        {
+            ButtonMethod("0");
+        }
+        private void ButtonClear_Click(object sender, RoutedEventArgs e)
+        {
+            ClearMethod();
+        }
+        private void ClearMethod()
+        {
+            PINBox.Password = null;
+        }
+        private void ButtonMethod(string number)
+        {
+            if (PINBox.Password.Length < 6)
+            {
+                PINBox.Password += number;
+                if (PINBox.Password.Length == 6)
+                {
+                    LogIn(PINBox.Password);
+                }
+            }
+
+        }
     }
 }
